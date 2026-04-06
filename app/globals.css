@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-dm bg-cream text-brand-text;
+  }
+}
+
+@layer utilities {
+  .font-playfair { font-family: 'Playfair Display', serif; }
+  .font-dm { font-family: 'DM Sans', sans-serif; }
+}
