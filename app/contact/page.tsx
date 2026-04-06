@@ -33,7 +33,7 @@ export default function ContactPage() {
           <div className="space-y-5">
             <h2 className="font-playfair text-2xl text-maroon font-bold mb-6">Contact Information</h2>
 
-            [
+            {[
               {
                 icon: '📞',
                 title: 'Phone',
