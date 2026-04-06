@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     url: 'https://roshanlalsweets.vercel.app/about',
   },
 };
+const timeline = [ 
   { year: 'Pre-1947', label: 'Founded', desc: 'Late Shri Roshan Lal Ji establishes the sweet shop with a mission to provide pure, quality sweets.' },
   { year: '1960s', label: 'Growing Trust', desc: 'Word spreads. Customers from surrounding districts make special trips for our signature Son Papdi and Kaju Katli.' },
   { year: '1980s', label: 'Expansion', desc: 'Second generation joins the business. Restaurant wing added to serve hot North Indian food.' },
@@ -69,12 +70,13 @@ export default function AboutPage() {
           <div className="relative">
             <div className="absolute left-16 md:left-1/2 top-0 bottom-0 w-px bg-amber-200" />
             <div className="space-y-8">
-              {milestones.map((m, i) => (
+              {timeline.map((m, i) => (
                 <div key={m.year} className={`flex gap-8 items-start ${i % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
                   <div className={`w-32 flex-shrink-0 text-right ${i % 2 === 1 ? 'md:text-left' : ''}`}>
                     <span className="font-playfair font-bold text-maroon text-sm">{m.year}</span>
                   </div>
                   <div className="relative">
+                    
                     <div className="w-4 h-4 bg-maroon rounded-full border-4 border-cream absolute -left-2 top-1" />
                   </div>
                   <div className="flex-1 bg-white rounded-xl border border-amber-100 p-5 ml-4">
