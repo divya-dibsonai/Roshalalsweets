@@ -26,6 +26,14 @@ module.exports = {
         playfair: ['Playfair Display', 'serif'],
         dm: ['DM Sans', 'sans-serif'],
       },
+      boxShadow: {
+        'gold-glow': '0 0 28px rgba(201,146,10,0.25)',
+        'gold-glow-lg': '0 0 40px rgba(201,146,10,0.35)',
+        'maroon-glow': '0 0 28px rgba(139,26,26,0.2)',
+      },
+      ringColor: {
+        gold: '#C9920A',
+      },
     },
   },
   plugins: [],

@@ -192,6 +192,84 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Trusted Across India — Stats */}
+      <section className="bg-white px-6 md:px-10 py-16">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="font-playfair text-3xl md:text-4xl text-brand-dark font-bold text-center mb-3">
+            Trusted Across India
+          </h2>
+          <p className="text-center text-amber-700/60 text-sm mb-12 max-w-xl mx-auto">
+            From family celebrations to weddings and festive gifting — Roshan Lal Ji Sweets is North India's most loved sweet destination.
+          </p>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
+            {[
+              { number: '75+', label: 'Years of Legacy', emoji: '🪔' },
+              { number: '1,821+', label: 'Happy Customers', emoji: '⭐' },
+              { number: '500+', label: 'Weddings Celebrated', emoji: '💍' },
+              { number: 'Pan-India', label: 'Delivery Network', emoji: '🚀' },
+            ].map((stat) => (
+              <div
+                key={stat.label}
+                className="group relative border border-amber-200 rounded-2xl p-6 text-center cursor-default
+                  transition-all duration-300 ease-out
+                  hover:border-gold hover:shadow-gold-glow
+                  hover:-translate-y-1 hover:bg-gradient-to-b hover:from-white hover:to-amber-50"
+              >
+                {/* Glow ring on hover */}
+                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300
+                  ring-1 ring-gold/40 ring-offset-0" />
+
+                <div className="text-3xl mb-3 transition-transform duration-300 group-hover:scale-110">
+                  {stat.emoji}
+                </div>
+                <div className="font-playfair text-2xl md:text-3xl font-extrabold text-maroon mb-2 leading-none">
+                  {stat.number}
+                </div>
+                <div className="text-xs font-semibold text-amber-700/70 uppercase tracking-wider leading-tight">
+                  {stat.label}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Divider */}
+      <div className="max-w-5xl mx-auto px-6 md:px-10">
+        <hr className="border-amber-200" />
+      </div>
+
+      {/* Featured In — Media Logos */}
+      <section className="bg-white px-6 md:px-10 py-12">
+        <div className="max-w-5xl mx-auto">
+          <h3 className="font-playfair text-2xl text-brand-dark font-bold text-center mb-10">
+            Featured In
+          </h3>
+          <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6">
+            {[
+              { name: 'Dainik Jagran', style: 'font-extrabold text-red-700 text-lg tracking-tight' },
+              { name: 'Amar Ujala', style: 'font-black text-blue-700 text-lg italic' },
+              { name: 'Times of India', style: 'font-bold text-gray-800 text-base tracking-wide' },
+              { name: 'JustDial', style: 'font-extrabold text-orange-500 text-lg' },
+              { name: 'MagicPin', style: 'font-black text-purple-600 text-lg' },
+              { name: 'TripAdvisor', style: 'font-bold text-green-600 text-base tracking-tight' },
+            ].map((media) => (
+              <div
+                key={media.name}
+                className="group px-5 py-3 rounded-xl border border-transparent
+                  hover:border-amber-200 hover:shadow-md hover:bg-amber-50/60
+                  transition-all duration-200 cursor-default"
+              >
+                <span className={`${media.style} opacity-60 group-hover:opacity-100 transition-opacity duration-200`}>
+                  {media.name}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </>
   );
 }
