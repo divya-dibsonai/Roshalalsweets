@@ -2,6 +2,9 @@
 import PageHero from '@/components/PageHero';
 import { useState } from 'react';
 
+// Note: with 'use client', use next/head or move metadata to a parent server component.
+// SEO for this page is handled by the root layout's structured data.
+
 export default function ContactPage() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', subject: 'General Enquiry', message: '' });
   const [submitted, setSubmitted] = useState(false);
@@ -30,12 +33,12 @@ export default function ContactPage() {
           <div className="space-y-5">
             <h2 className="font-playfair text-2xl text-maroon font-bold mb-6">Contact Information</h2>
 
-            {[
+            [
               {
                 icon: '📞',
                 title: 'Phone',
-                lines: ['+91-7055513961'],
-                sub: 'Mon–Sun, 8 AM – 10 PM',
+                lines: ['+91-7055513961', '+91-9456809936'],
+                sub: 'Open Daily: 7:30 AM – 10:30 PM',
               },
               {
                 icon: '📧',
@@ -46,8 +49,8 @@ export default function ContactPage() {
               {
                 icon: '📍',
                 title: 'Visit Us',
-                lines: ['Roshan Lal Ji Sweets & Restaurant', 'Main Branch, North India'],
-                sub: 'Open daily, 8 AM – 10 PM',
+                lines: ['Circular Road, Malgodam Crossing', 'Nadrai Gate (Opp. Canara Bank)', 'Kasganj, Uttar Pradesh 207123'],
+                sub: 'Open Daily: 7:30 AM – 10:30 PM',
               },
               {
                 icon: '💬',
@@ -183,20 +186,36 @@ export default function ContactPage() {
           </div>
         </div>
 
-        {/* Map placeholder */}
-        <div className="mt-10 bg-gold-light rounded-2xl overflow-hidden h-56 flex items-center justify-center border border-amber-200">
-          <div className="text-center">
-            <span className="text-5xl block mb-3">🗺️</span>
-            <p className="font-playfair text-lg text-maroon font-semibold">Roshan Lal Ji Sweets & Restaurant</p>
-            <p className="text-xs text-amber-700/70 mt-1">North India's Most Trusted Sweet Shop</p>
+        {/* Google Maps Embed */}
+        <div className="mt-10 rounded-2xl overflow-hidden border border-amber-200 shadow-sm">
+          <div className="bg-maroon px-6 py-4 flex items-center justify-between">
+            <div>
+              <p className="font-playfair text-cream font-semibold text-base">Roshan Lal Ji Sweets & Restaurant</p>
+              <p className="text-cream/70 text-xs mt-0.5">Circular Road, Malgodam Crossing, Nadrai Gate, Kasganj, UP 207123</p>
+            </div>
             <a
-              href="https://maps.google.com"
+              href="https://www.google.com/maps/search/Roshan+Lal+Ji+Sweets+Nadrai+Gate+Kasganj"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-3 inline-block text-maroon text-xs font-bold underline"
+              className="flex-shrink-0 bg-gold-pale text-maroon px-4 py-2 rounded-full text-xs font-bold hover:bg-gold transition-colors"
             >
-              Open in Google Maps →
+              Open in Maps ↗
             </a>
+          </div>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3517.234!2d78.6447!3d27.8074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3973748a5df9e49b%3A0x7b8e2f3a1c5d6e8f!2sNadrai%20Gate%2C%20Kasganj%2C%20Uttar%20Pradesh%20207123!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+            width="100%"
+            height="400"
+            style={{ border: 0, display: 'block' }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Roshan Lal Ji Sweets Location - Nadrai Gate, Kasganj"
+          />
+          <div className="bg-amber-50 px-6 py-3 flex flex-wrap gap-4 text-xs text-amber-800">
+            <span>📞 +91-7055513961 &nbsp;|&nbsp; +91-9456809936</span>
+            <span>🕐 Open Daily: 7:30 AM – 10:30 PM</span>
+            <span>📍 Opp. Canara Bank, Nadrai Gate</span>
           </div>
         </div>
       </section>

@@ -1,7 +1,16 @@
+import type { Metadata } from 'next';
 import PageHero from '@/components/PageHero';
 import ProductCard from '@/components/ProductCard';
 
-const sweets = [
+export const metadata: Metadata = {
+  title: 'Indian Sweets — Son Papdi, Kaju Katli, Mawa Barfi & More',
+  description: 'Shop authentic North Indian sweets made with pure desi ghee & khoya — Son Papdi, Kaju Katli, Mawa Barfi, Gujiya, Ghaver & more. Roshan Lal Ji Sweets, Kasganj, UP.',
+  openGraph: {
+    title: 'Indian Sweets | Roshan Lal Ji Sweets & Restaurant',
+    description: 'Handcrafted Indian sweets made with pure ghee — Son Papdi, Kaju Katli, Gulab Jamun, Ghaver & more. Order from Kasganj, UP.',
+    url: 'https://roshanlalsweets.vercel.app/sweets',
+  },
+};
   { emoji: '🧡', tag: 'Bestseller', name: 'Son Papdi', desc: 'Melt-in-mouth flaky delight made with pure ghee & sugar', price: '₹280/kg', bg: 'bg-orange-50' },
   { emoji: '🤍', tag: 'Premium', name: 'Kaju Katli', desc: 'Classic cashew fudge with real silver varq', price: '₹720/kg', bg: 'bg-gray-50' },
   { emoji: '🍯', tag: 'Festive', name: 'Mawa Barfi', desc: 'Rich khoya barfi with cardamom, a family favourite', price: '₹480/kg', bg: 'bg-amber-50' },

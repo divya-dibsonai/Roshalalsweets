@@ -1,6 +1,15 @@
+import type { Metadata } from 'next';
 import PageHero from '@/components/PageHero';
 
-const milestones = [
+export const metadata: Metadata = {
+  title: 'About Us — Our Story Since Before Independence',
+  description: 'Learn about Roshan Lal Ji Sweets — founded before India\'s independence by Late Shri Roshan Lal Ji. A family legacy of pure, hygienic, delicious sweets in Kasganj, UP.',
+  openGraph: {
+    title: 'Our Story | Roshan Lal Ji Sweets & Restaurant',
+    description: 'A family sweet shop founded before 1947. Three generations of pure ghee sweets, love, and tradition in Kasganj, Uttar Pradesh.',
+    url: 'https://roshanlalsweets.vercel.app/about',
+  },
+};
   { year: 'Pre-1947', label: 'Founded', desc: 'Late Shri Roshan Lal Ji establishes the sweet shop with a mission to provide pure, quality sweets.' },
   { year: '1960s', label: 'Growing Trust', desc: 'Word spreads. Customers from surrounding districts make special trips for our signature Son Papdi and Kaju Katli.' },
   { year: '1980s', label: 'Expansion', desc: 'Second generation joins the business. Restaurant wing added to serve hot North Indian food.' },

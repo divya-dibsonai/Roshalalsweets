@@ -1,5 +1,16 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import ProductCard from '@/components/ProductCard';
+
+export const metadata: Metadata = {
+  title: 'Roshan Lal Ji Sweets & Restaurant — Authentic Indian Sweets Since Independence',
+  description: 'Buy authentic North Indian sweets, namkeen, bakery & restaurant food in Kasganj, UP. Pure desi ghee sweets — Son Papdi, Kaju Katli, Mawa Barfi & more. Est. before 1947.',
+  openGraph: {
+    title: 'Roshan Lal Ji Sweets & Restaurant',
+    description: 'Authentic Indian sweets made with pure ghee since before Independence. Son Papdi, Kaju Katli, Mawa Barfi & more — Kasganj, UP.',
+    url: 'https://roshanlalsweets.vercel.app',
+  },
+};
 
 const categories = [
   { emoji: '🌿', label: 'Guilt-Free', bg: 'bg-green-50', href: '/sweets' },

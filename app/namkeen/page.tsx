@@ -1,5 +1,16 @@
+import type { Metadata } from 'next';
 import PageHero from '@/components/PageHero';
 import ProductCard from '@/components/ProductCard';
+
+export const metadata: Metadata = {
+  title: 'Namkeen & Snacks — Aloo Bhujia, Mathri, Mix Namkeen & More',
+  description: 'Buy fresh North Indian namkeen & snacks — Aloo Bhujia, Mix Namkeen, Mathri, Roasted Chana & more. Handmade with pure ingredients at Roshan Lal Ji Sweets, Kasganj.',
+  openGraph: {
+    title: 'Namkeen & Snacks | Roshan Lal Ji Sweets',
+    description: 'Crispy, spicy namkeen & snacks — Aloo Bhujia, Mathri, Dal Moth & more. Perfect with chai.',
+    url: 'https://roshanlalsweets.vercel.app/namkeen',
+  },
+};
 
 const namkeen = [
   { emoji: '🥜', tag: 'Crispy', name: 'Aloo Bhujia', desc: 'Thin, spiced potato sev — a classic North Indian favourite', price: '₹180/kg', bg: 'bg-yellow-50' },
