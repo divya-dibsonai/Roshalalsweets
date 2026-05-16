@@ -12,10 +12,10 @@ export const metadata: Metadata = {
   },
 };
 const sweets = [
-  { emoji: '🧡', tag: 'Bestseller', name: 'Son Papdi', desc: 'Melt-in-mouth flaky delight made with pure ghee & sugar', price: '₹280/kg', bg: 'bg-orange-50' },
-  { emoji: '🤍', tag: 'Premium', name: 'Kaju Katli', desc: 'Classic cashew fudge with real silver varq', price: '₹720/kg', bg: 'bg-gray-50' },
-  { emoji: '🍯', tag: 'Festive', name: 'Mawa Barfi', desc: 'Rich khoya barfi with cardamom, a family favourite', price: '₹480/kg', bg: 'bg-amber-50' },
-  { emoji: '🌹', tag: 'Seasonal', name: 'Gujiya', desc: 'Holi special khoya-filled pastries, fried to perfection', price: '₹380/kg', bg: 'bg-pink-50' },
+  { image: '/images/sweets/Balushahi.jpg', tag: 'Bestseller', name: 'Balushahi', desc: 'Melt-in-mouth flaky delight made with pure ghee & sugar', price: '₹280/kg', bg: 'bg-orange-50' },
+  { image: '/images/sweets/Bengali Sweet.jpg', tag: 'Premium', name: 'Bengali Sweet', desc: 'Classic cashew fudge with real silver varq', price: '₹720/kg', bg: 'bg-gray-50' },
+  { image: '/images/sweets/Gujiya.jpg', tag: 'Festive', name: 'Gujiya', desc: 'Rich khoya barfi with cardamom, a family favourite', price: '₹480/kg', bg: 'bg-amber-50' },
+  { image: '/images/sweets/son-papdi.jpg', tag: 'Seasonal', name: 'Gujiya', desc: 'Holi special khoya-filled pastries, fried to perfection', price: '₹380/kg', bg: 'bg-pink-50' },
   { emoji: '🟤', tag: 'Classic', name: 'Gulab Jamun', desc: 'Soft, spongy milk solids soaked in rose-flavoured syrup', price: '₹320/kg', bg: 'bg-amber-50' },
   { emoji: '🍬', tag: 'Traditional', name: 'Halwa', desc: 'Warm, ghee-laden semolina halwa with cardamom & nuts', price: '₹260/kg', bg: 'bg-yellow-50' },
   { emoji: '🫐', tag: 'Special', name: 'Kheer', desc: 'Creamy rice pudding slow-cooked with milk, saffron & pistachios', price: '₹200/kg', bg: 'bg-blue-50' },
