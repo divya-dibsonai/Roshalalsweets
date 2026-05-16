@@ -1,5 +1,8 @@
+import Image from 'next/image';
+
 interface ProductCardProps {
-  emoji: string;
+  image?: string;
+  emoji?: string;
   tag: string;
   name: string;
   desc: string;
@@ -7,11 +10,21 @@ interface ProductCardProps {
   bg?: string;
 }
 
-export default function ProductCard({ emoji, tag, name, desc, price, bg = 'bg-gold-light' }: ProductCardProps) {
+export default function ProductCard({ image, emoji, tag, name, desc, price, bg = 'bg-gold-light' }: ProductCardProps) {
   return (
     <div className="bg-white rounded-2xl overflow-hidden border border-amber-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-200 cursor-pointer">
-      <div className={`w-full aspect-square flex items-center justify-center text-6xl ${bg}`}>
-        {emoji}
+      <div className={`w-full aspect-square flex items-center justify-center ${bg} relative`}>
+        {image ? (
+          <Image
+            src={image}
+            alt={name}
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+          />
+        ) : (
+          <span className="text-6xl">{emoji}</span>
+        )}
       </div>
       <div className="p-4">
         <div className="text-[10px] font-bold text-gold uppercase tracking-wider mb-1">{tag}</div>
