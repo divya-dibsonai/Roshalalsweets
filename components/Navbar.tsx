@@ -32,16 +32,14 @@ export default function Navbar() {
         {/* Logo */}
       
 
-<Link href="/" className="flex items-center gap-3 py-3 flex-shrink-0">
-  <Image
-    src="/logo.jpg"
-    alt="Roshan Lal Ji Sweets"
-    width={120}
-    height={48}
-    className="object-contain"
-    priority
-  />
-</Link>
+<Image
+  src="/logo.jpg"
+  alt="Roshan Lal Ji Sweets"
+  width={120}
+  height={48}
+  className="object-contain"
+  priority
+/>
 
         {/* Search */}
         <div className="flex-1 max-w-lg mx-auto hidden md:flex items-center bg-amber-50 border border-amber-200 rounded-lg overflow-hidden">
