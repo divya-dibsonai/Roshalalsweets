@@ -33,7 +33,7 @@ export default function Navbar() {
       
 
 <Image
-  src="/logo.jpg"
+  src="/logo.png"
   alt="Roshan Lal Ji Sweets"
   width={120}
   height={48}
