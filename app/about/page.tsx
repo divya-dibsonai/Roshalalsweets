@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import PageHero from '@/components/PageHero';
 
 export const metadata: Metadata = {
@@ -10,12 +11,40 @@ export const metadata: Metadata = {
     url: 'https://roshanlalsweets.vercel.app/about',
   },
 };
-const timeline = [ 
-  { year: 'Pre-1947', label: 'Founded', desc: 'Late Shri Roshan Lal Ji establishes the sweet shop with a mission to provide pure, quality sweets.' },
-  { year: '1960s', label: 'Growing Trust', desc: 'Word spreads. Customers from surrounding districts make special trips for our signature Son Papdi and Kaju Katli.' },
-  { year: '1980s', label: 'Expansion', desc: 'Second generation joins the business. Restaurant wing added to serve hot North Indian food.' },
-  { year: '2000s', label: 'Modernisation', desc: 'Hygienic workshop upgrades, new product lines including bakery items and Bhaji Box introduced.' },
-  { year: 'Today', label: 'Pan-India Reach', desc: 'Customers from all corners of India order online. Third generation upholding the original legacy.' },
+
+const timeline = [
+  {
+    year: 'Pre-1947',
+    label: 'Founded',
+    desc: 'Late Shri Roshan Lal Ji establishes the sweet shop with a mission to provide pure, quality sweets to the people of Kasganj.',
+    image: '/founder.jpg',
+    caption: 'Late Shri Roshan Lal Ji — Founder',
+  },
+  {
+    year: '1960s',
+    label: 'Growing Trust',
+    desc: 'Word spreads. Customers from surrounding districts make special trips for our signature Son Papdi and Kaju Katli.',
+    image: null,
+  },
+  {
+    year: '1980s',
+    label: 'Expansion',
+    desc: 'Second generation joins the business. Restaurant wing added to serve hot North Indian food.',
+    image: '/kailash.jpg',
+    caption: 'Shri Kailash Chand Ji — Second Generation',
+  },
+  {
+    year: '2000s',
+    label: 'Modernisation',
+    desc: 'Hygienic workshop upgrades, new product lines including bakery items and Bhaji Box introduced.',
+    image: null,
+  },
+  {
+    year: 'Today',
+    label: 'Pan-India Reach',
+    desc: 'Customers from all corners of India order online. Third generation upholding the original legacy.',
+    image: null,
+  },
 ];
 
 const values = [
@@ -23,6 +52,23 @@ const values = [
   { icon: '🧼', title: 'Hygienic Standards', desc: 'Our workshop is covered and sanitised daily. Cleanliness is not optional — it is our founding principle.' },
   { icon: '❤️', title: 'Family Values', desc: 'Run by family, for families. We treat every customer with the warmth we would a guest in our home.' },
   { icon: '🌱', title: 'Quality Promise', desc: 'We would rather sell less than compromise on quality. This is the promise Roshan Lal Ji made, and we honour it.' },
+];
+
+const founders = [
+  {
+    name: 'Late Shri Roshan Lal Ji',
+    role: 'Founder & Visionary',
+    desc: 'Founded the shop before India\'s independence with a singular vision — pure sweets, made with love and honesty.',
+    image: '/founder.jpg',
+    generation: '1st Generation',
+  },
+  {
+    name: 'Shri Kailash Chand Ji',
+    role: 'Second Generation',
+    desc: 'Expanded the legacy, added the restaurant, and continued the tradition of quality that his father built.',
+    image: '/kailash.jpg',
+    generation: '2nd Generation',
+  },
 ];
 
 export default function AboutPage() {
@@ -52,7 +98,7 @@ export default function AboutPage() {
         </div>
 
         {/* Values */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-20">
           {values.map(v => (
             <div key={v.title} className="bg-white rounded-2xl border border-amber-100 p-7 flex gap-4">
               <div className="text-3xl flex-shrink-0">{v.icon}</div>
@@ -64,24 +110,106 @@ export default function AboutPage() {
           ))}
         </div>
 
-        {/* Timeline */}
+        {/* ── MEET THE FAMILY ── */}
+        <div className="mb-20">
+          <h2 className="font-playfair text-3xl md:text-4xl text-maroon font-bold text-center mb-3">
+            The Family Behind the Legacy
+          </h2>
+          <p className="text-center text-brand-text/60 text-sm mb-10">
+            Three generations of dedication, love, and pure ghee sweets.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {founders.map(person => (
+              <div
+                key={person.name}
+                className="bg-white rounded-2xl border border-amber-100 overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+              >
+                {/* Photo */}
+                <div className="relative w-full h-64 bg-amber-50">
+                  <Image
+                    src={person.image}
+                    alt={person.name}
+                    fill
+                    className="object-cover object-top sepia-[0.3] hover:sepia-0 transition-all duration-500"
+                  />
+                  {/* Generation badge */}
+                  <div className="absolute top-3 left-3 bg-maroon text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">
+                    {person.generation}
+                  </div>
+                  {/* Vintage vignette overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent rounded-t-2xl" />
+                </div>
+
+                {/* Info */}
+                <div className="p-6">
+                  <h3 className="font-playfair text-xl font-bold text-maroon mb-0.5">{person.name}</h3>
+                  <p className="text-[11px] font-semibold text-gold uppercase tracking-widest mb-3">{person.role}</p>
+                  <p className="text-sm text-brand-text/70 leading-relaxed">{person.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* ── TIMELINE ── */}
         <div id="story">
-          <h2 className="font-playfair text-3xl text-maroon font-bold text-center mb-10">Our Journey</h2>
+          <h2 className="font-playfair text-3xl md:text-4xl text-maroon font-bold text-center mb-3">Our Journey</h2>
+          <p className="text-center text-brand-text/60 text-sm mb-12">Over 75 years of sweetness, tradition, and trust.</p>
+
           <div className="relative">
-            <div className="absolute left-16 md:left-1/2 top-0 bottom-0 w-px bg-amber-200" />
-            <div className="space-y-8">
+            {/* Center line */}
+            <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-amber-200" />
+
+            <div className="space-y-10">
               {timeline.map((m, i) => (
-                <div key={m.year} className={`flex gap-8 items-start ${i % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
-                  <div className={`w-32 flex-shrink-0 text-right ${i % 2 === 1 ? 'md:text-left' : ''}`}>
-                    <span className="font-playfair font-bold text-maroon text-sm">{m.year}</span>
+                <div
+                  key={m.year}
+                  className={`relative flex gap-6 md:gap-0 items-start ${
+                    i % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'
+                  }`}
+                >
+                  {/* Year label — desktop */}
+                  <div
+                    className={`hidden md:flex w-1/2 items-start pt-4 ${
+                      i % 2 === 1 ? 'justify-start pl-10' : 'justify-end pr-10'
+                    }`}
+                  >
+                    <span className="font-playfair font-bold text-maroon text-xl">{m.year}</span>
                   </div>
-                  <div className="relative">
-                    
-                    <div className="w-4 h-4 bg-maroon rounded-full border-4 border-cream absolute -left-2 top-1" />
-                  </div>
-                  <div className="flex-1 bg-white rounded-xl border border-amber-100 p-5 ml-4">
-                    <div className="text-[10px] font-bold text-gold uppercase tracking-widest mb-1">{m.label}</div>
-                    <p className="text-xs text-brand-text/75 leading-relaxed">{m.desc}</p>
+
+                  {/* Dot */}
+                  <div className="absolute left-6 md:left-1/2 top-5 -translate-x-1/2 w-4 h-4 bg-maroon rounded-full border-4 border-amber-50 z-10" />
+
+                  {/* Card */}
+                  <div className={`flex-1 md:w-1/2 pl-12 md:pl-0 ${i % 2 === 1 ? 'md:pr-10' : 'md:pl-10'}`}>
+                    {/* Year — mobile */}
+                    <span className="md:hidden font-playfair font-bold text-maroon text-base block mb-1">{m.year}</span>
+
+                    <div className="bg-white rounded-2xl border border-amber-100 overflow-hidden shadow-sm">
+                      {/* Photo if available */}
+                      {m.image && (
+                        <div className="relative w-full h-48">
+                          <Image
+                            src={m.image}
+                            alt={m.caption || m.label}
+                            fill
+                            className="object-cover object-top sepia-[0.4]"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                          {m.caption && (
+                            <p className="absolute bottom-2 left-0 right-0 text-center text-white text-[11px] italic font-medium px-4">
+                              {m.caption}
+                            </p>
+                          )}
+                        </div>
+                      )}
+
+                      <div className="p-5">
+                        <div className="text-[10px] font-bold text-gold uppercase tracking-widest mb-1">{m.label}</div>
+                        <p className="text-xs text-brand-text/75 leading-relaxed">{m.desc}</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -112,6 +240,7 @@ export default function AboutPage() {
 
       {/* Sign-off */}
       <section className="px-6 md:px-10 py-14 max-w-2xl mx-auto text-center">
+        <div className="text-4xl mb-4">🪔</div>
         <p className="text-brand-text/70 text-sm leading-relaxed italic mb-4">
           "We value, relish and cherish your wishes. Verily, this will add the fuel to conduct some more useful work for our customers across the globe. Always beseeching your sincere blessings and wise counsel, with choicest wishes & regards."
         </p>
