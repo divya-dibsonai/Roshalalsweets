@@ -25,9 +25,9 @@ const namkeen = [
   { image: '/images/namkeen/Roasted Bajra Mix.JPG', tag: 'Healthy', name: 'Roasted Bajra Mix', desc: '...', price: '₹180/kg', bg: 'bg-amber-50' },
   { image: '/images/namkeen/Roasted Chana Jor Garam.JPG', tag: 'Spicy', name: 'Roasted Chana Jor Garam', desc: '...', price: '₹160/kg', bg: 'bg-red-50' },
   { image: '/images/namkeen/Roasted Hing Chana.JPG', tag: 'Healthy', name: 'Roasted Hing Chana', desc: '...', price: '₹180/kg', bg: 'bg-green-50' },
-  { image: '/images/namkeen/Roasted Makhana - Mint/ Pudina.JPG', tag: 'Light', name: 'Roasted Makhana - Mint/Pudina', desc: '...', price: '₹300/kg', bg: 'bg-emerald-50' },
+  { image: '/images/namkeen/Roasted Makhana - Mint Pudina.JPG', tag: 'Light', name: 'Roasted Makhana - Mint/Pudina', desc: '...', price: '₹300/kg', bg: 'bg-emerald-50' },
   { image: '/images/namkeen/Roasted Makhana- Chilli Tomato.JPG', tag: 'Spicy', name: 'Roasted Makhana - Chilli Tomato', desc: '...', price: '₹300/kg', bg: 'bg-red-50' },
-  { image: '/images/namkeen/Roasted Makhana- salt & Pepper (Falhari).JPG', tag: 'Light', name: 'Roasted Makhana - Salt & Pepper', desc: '...', price: '₹300/kg', bg: 'bg-amber-50' },
+  { image: '/images/namkeen/Roasted Makhana- salt & Pepper (Falhari).JPG', tag: 'Light', name: 'Roasted Makhana - Salt & Pepper', desc: 'FALHARI', price: '₹300/kg', bg: 'bg-amber-50' },
   { image: '/images/namkeen/Roasted Moong.JPG', tag: 'Healthy', name: 'Roasted Moong', desc: '...', price: '₹160/kg', bg: 'bg-green-50' },
   { image: '/images/namkeen/Roasted Moth.JPG', tag: 'Healthy', name: 'Roasted Moth', desc: '...', price: '₹160/kg', bg: 'bg-emerald-50' },
 ];
