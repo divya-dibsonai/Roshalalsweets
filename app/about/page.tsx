@@ -126,13 +126,14 @@ export default function AboutPage() {
                 className="bg-white rounded-2xl border border-amber-100 overflow-hidden shadow-sm hover:shadow-md transition-shadow"
               >
                 {/* Photo */}
-                <div className="relative w-full h-64 bg-amber-50">
-                  <Image
-                    src={person.image}
-                    alt={person.name}
-                    fill
-                    className="object-cover object-top sepia-[0.3] hover:sepia-0 transition-all duration-500"
-                  />
+                <div className="relative w-full bg-amber-50">
+  <Image
+    src={person.image}
+    alt={person.name}
+    width={600}
+    height={800}
+    className="w-full h-auto sepia-[0.3] hover:sepia-0 transition-all duration-500"
+  />
                   {/* Generation badge */}
                   <div className="absolute top-3 left-3 bg-maroon text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">
                     {person.generation}
@@ -189,13 +190,14 @@ export default function AboutPage() {
                     <div className="bg-white rounded-2xl border border-amber-100 overflow-hidden shadow-sm">
                       {/* Photo if available */}
                       {m.image && (
-                        <div className="relative w-full h-48">
-                          <Image
-                            src={m.image}
-                            alt={m.caption || m.label}
-                            fill
-                            className="object-cover object-top sepia-[0.4]"
-                          />
+                        <div className="relative w-full">
+  <Image
+    src={m.image}
+    alt={m.caption || m.label}
+    width={600}
+    height={800}
+    className="w-full h-auto sepia-[0.4]"
+  />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
                           {m.caption && (
                             <p className="absolute bottom-2 left-0 right-0 text-center text-white text-[11px] italic font-medium px-4">
