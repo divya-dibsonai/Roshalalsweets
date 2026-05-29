@@ -34,7 +34,7 @@ export default function Navbar() {
 
 <Link href="/" className="flex items-center gap-3 py-3 flex-shrink-0">
   <Image
-    src="/logo.png"
+    src="/logo.jpg"
     alt="Roshan Lal Ji Sweets"
     width={120}
     height={48}
