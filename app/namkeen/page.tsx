@@ -13,14 +13,23 @@ export const metadata: Metadata = {
 };
 
 const namkeen = [
-  { emoji: '🥜', tag: 'Crispy', name: 'Aloo Bhujia', desc: 'Thin, spiced potato sev — a classic North Indian favourite', price: '₹180/kg', bg: 'bg-yellow-50' },
-  { emoji: '🌶️', tag: 'Spicy', name: 'Mix Namkeen', desc: 'Medley of sev, peanuts & dal with the perfect spice blend', price: '₹220/kg', bg: 'bg-red-50' },
-  { emoji: '🫘', tag: 'Healthy', name: 'Roasted Chana', desc: 'Lightly spiced roasted chickpeas, high protein & delicious', price: '₹160/kg', bg: 'bg-green-50' },
-  { emoji: '🥨', tag: 'Crunchy', name: 'Mathri', desc: 'Flaky, seasoned wheat crackers made with pure ghee', price: '₹240/kg', bg: 'bg-amber-50' },
-  { emoji: '🌿', tag: 'Light', name: 'Sev Murmura', desc: 'Light puffed rice tossed with sev and spices', price: '₹140/kg', bg: 'bg-emerald-50' },
-  { emoji: '🔴', tag: 'Spicy', name: 'Lal Mirch Mathri', desc: 'Red chilli-infused crispy crackers for the bold palate', price: '₹260/kg', bg: 'bg-red-50' },
-  { emoji: '🌰', tag: 'Nutty', name: 'Masala Peanuts', desc: 'Crunchy peanuts coated in chickpea flour & spices', price: '₹200/kg', bg: 'bg-orange-50' },
-  { emoji: '🟡', tag: 'Classic', name: 'Dal Moth', desc: 'Traditional North Indian snack of fried lentils with spices', price: '₹280/kg', bg: 'bg-yellow-50' },
+  { image: '/images/namkeen/Beetroot Chips- Chilli Chat.JPG', tag: 'Crispy', name: 'Beetroot Chips - Chilli Chat', desc: '...', price: '₹180/kg', bg: 'bg-yellow-50' },
+  { image: '/images/namkeen/Dal Biji Namkeen.JPG', tag: 'Classic', name: 'Dal Biji Namkeen', desc: '...', price: '₹200/kg', bg: 'bg-amber-50' },
+  { image: '/images/namkeen/Gud Chana.JPG', tag: 'Sweet', name: 'Gud Chana', desc: '...', price: '₹160/kg', bg: 'bg-yellow-50' },
+  { image: '/images/namkeen/Hing Mixture Namkeen.JPG', tag: 'Spicy', name: 'Hing Mixture Namkeen', desc: '...', price: '₹220/kg', bg: 'bg-red-50' },
+  { image: '/images/namkeen/Hing Peanut Namkeen.JPG', tag: 'Nutty', name: 'Hing Peanut Namkeen', desc: '...', price: '₹200/kg', bg: 'bg-orange-50' },
+  { image: '/images/namkeen/Khokla Chana Namkeen.JPG', tag: 'Crunchy', name: 'Khokla Chana Namkeen', desc: '...', price: '₹180/kg', bg: 'bg-green-50' },
+  { image: '/images/namkeen/Moong Bhujiya.JPG', tag: 'Crispy', name: 'Moong Bhujiya', desc: '...', price: '₹180/kg', bg: 'bg-yellow-50' },
+  { image: '/images/namkeen/Oats Chips- Punjabi Tadka.JPG', tag: 'Healthy', name: 'Oats Chips - Punjabi Tadka', desc: '...', price: '₹200/kg', bg: 'bg-emerald-50' },
+  { image: '/images/namkeen/Ragi Chips- Peri Peri.JPG', tag: 'Healthy', name: 'Ragi Chips - Peri Peri', desc: '...', price: '₹200/kg', bg: 'bg-green-50' },
+  { image: '/images/namkeen/Roasted Bajra Mix.JPG', tag: 'Healthy', name: 'Roasted Bajra Mix', desc: '...', price: '₹180/kg', bg: 'bg-amber-50' },
+  { image: '/images/namkeen/Roasted Chana Jor Garam.JPG', tag: 'Spicy', name: 'Roasted Chana Jor Garam', desc: '...', price: '₹160/kg', bg: 'bg-red-50' },
+  { image: '/images/namkeen/Roasted Hing Chana.JPG', tag: 'Healthy', name: 'Roasted Hing Chana', desc: '...', price: '₹180/kg', bg: 'bg-green-50' },
+  { image: '/images/namkeen/Roasted Makhana - Mint/ Pudina.JPG', tag: 'Light', name: 'Roasted Makhana - Mint/Pudina', desc: '...', price: '₹300/kg', bg: 'bg-emerald-50' },
+  { image: '/images/namkeen/Roasted Makhana- Chilli Tomato.JPG', tag: 'Spicy', name: 'Roasted Makhana - Chilli Tomato', desc: '...', price: '₹300/kg', bg: 'bg-red-50' },
+  { image: '/images/namkeen/Roasted Makhana- salt & Pepper (Falhari).JPG', tag: 'Light', name: 'Roasted Makhana - Salt & Pepper', desc: '...', price: '₹300/kg', bg: 'bg-amber-50' },
+  { image: '/images/namkeen/Roasted Moong.JPG', tag: 'Healthy', name: 'Roasted Moong', desc: '...', price: '₹160/kg', bg: 'bg-green-50' },
+  { image: '/images/namkeen/Roasted Moth.JPG', tag: 'Healthy', name: 'Roasted Moth', desc: '...', price: '₹160/kg', bg: 'bg-emerald-50' },
 ];
 
 export default function NamkeenPage() {
