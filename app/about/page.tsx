@@ -30,7 +30,7 @@ const timeline = [
     year: '1980s',
     label: 'Expansion',
     desc: 'Second generation joins the business. Restaurant wing added to serve hot North Indian food.',
-    image: '/kailash.jpg',
+    image: '/kailash.JPG',
     caption: 'Shri Kailash Chand Ji — Second Generation',
   },
   {
@@ -66,7 +66,7 @@ const founders = [
     name: 'Shri Kailash Chand Ji',
     role: 'Second Generation',
     desc: 'Expanded the legacy, added the restaurant, and continued the tradition of quality that his father built.',
-    image: '/kailash.jpg',
+    image: '/kailash.JPG',
     generation: '2nd Generation',
   },
 ];
