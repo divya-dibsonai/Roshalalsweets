@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
+import Image from 'next/image';  
 
 const navLinks = [
   { href: '/', label: '🏠 Home' },
@@ -29,15 +30,18 @@ export default function Navbar() {
       {/* Main Navbar */}
       <nav className="bg-cream border-b border-amber-200 px-6 md:px-10 flex items-center gap-6 sticky top-0 z-50 shadow-sm">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-3 py-3 flex-shrink-0">
-          <div className="w-12 h-12 bg-maroon rounded-xl flex items-center justify-center text-gold-pale font-playfair font-black text-lg tracking-tighter">
-            RLJ
-          </div>
-          <div className="hidden sm:flex flex-col leading-tight">
-            <span className="font-playfair text-sm font-bold text-maroon">Roshan Lal Ji</span>
-            <span className="text-[10px] text-gold font-semibold uppercase tracking-widest">Since Independence</span>
-          </div>
-        </Link>
+      
+
+<Link href="/" className="flex items-center gap-3 py-3 flex-shrink-0">
+  <Image
+    src="/logo.png"
+    alt="Roshan Lal Ji Sweets"
+    width={120}
+    height={48}
+    className="object-contain"
+    priority
+  />
+</Link>
 
         {/* Search */}
         <div className="flex-1 max-w-lg mx-auto hidden md:flex items-center bg-amber-50 border border-amber-200 rounded-lg overflow-hidden">
