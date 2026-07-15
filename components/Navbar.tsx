@@ -24,7 +24,7 @@ export default function Navbar() {
     <>
       {/* Promo Banner */}
       <div className="bg-maroon text-white text-center py-2.5 px-4 text-sm font-medium tracking-wide">
-        ✨ &nbsp; Free delivery on orders above ₹999 &nbsp;|&nbsp; Flat ₹200 Off on orders ₹2000 & above &nbsp; ✨
+        ✨ &nbsp; A Trusted Name for Over 60 Years &nbsp;|&nbsp; Pure Desi Ghee Preparation &nbsp; ✨
       </div>
 
       {/* Main Navbar */}
