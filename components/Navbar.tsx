@@ -54,23 +54,8 @@ export default function Navbar() {
           <button className="bg-maroon text-white px-4 py-2.5 text-base">🔍</button>
         </div>
 
-        {/* Right icons */}
+      {/* Right icons */}
         <div className="flex items-center gap-4 ml-auto">
-          <button className="hidden sm:flex flex-col items-center gap-0.5 text-[11px] font-medium text-brand-text cursor-pointer">
-            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-              <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
-            </svg>
-            Account
-          </button>
-          <button className="flex flex-col items-center gap-0.5 text-[11px] font-medium text-brand-text cursor-pointer relative">
-            <div className="relative">
-              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-                <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/>
-              </svg>
-              <span className="absolute -top-1.5 -right-1.5 bg-red-500 text-white rounded-full w-4 h-4 text-[9px] flex items-center justify-center font-bold">0</span>
-            </div>
-            Cart
-          </button>
           {/* Hamburger */}
           <button className="md:hidden ml-2 text-maroon" onClick={() => setMenuOpen(!menuOpen)}>
             <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
