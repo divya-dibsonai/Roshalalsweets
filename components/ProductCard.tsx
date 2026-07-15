@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 interface ProductCardProps {
-  image?: string;
+  image?: string | null;
   emoji?: string;
   tag: string;
   name: string;
