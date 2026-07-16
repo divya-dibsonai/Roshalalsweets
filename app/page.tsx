@@ -19,7 +19,7 @@ const categories = [
   { emoji: '🍫', label: 'Chocolates', bg: 'bg-emerald-50', href: '/sweets' },
   { emoji: '🌶️', label: 'Namkeen', bg: 'bg-yellow-50', href: '/namkeen' },
   { emoji: '🥐', label: 'Bakery', bg: 'bg-purple-50', href: '/bakery' },
-  { emoji: '🎁', label: 'Gifting', bg: 'bg-blue-50', href: '/sweets' },
+  { emoji: '🎁', label: 'Gifting', bg: 'bg-blue-50', href: '/gifting' },
   { emoji: '🍽️', label: 'Restaurant', bg: 'bg-orange-50', href: '/restaurant' },
 ];
 
