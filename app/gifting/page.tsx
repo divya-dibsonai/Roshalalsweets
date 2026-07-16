@@ -139,9 +139,6 @@ export default function GiftingPage() {
               <div className="p-4">
                 <div className="text-[10px] font-bold text-gold uppercase tracking-wider mb-1">{box.tag}</div>
                 <div className="font-playfair text-base font-semibold text-brand-dark mb-1.5 leading-snug">{box.name}</div>
-                {box.desc && (
-                  <div className="text-[11px] text-amber-700/70 mb-3 leading-relaxed">{box.desc}</div>
-                )}
                 <div className="flex items-center gap-1.5 text-sm font-bold text-maroon">
                   💬 Enquire to Customize
                 </div>
