@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import ProductCard from '@/components/ProductCard';
 import Image from 'next/image';
+import { Leaf, ChefHat, Milk, Sparkles, Gift, Heart } from 'lucide-react';
+import TrustTimeline from '@/components/TrustTimeline';
 
 export const metadata: Metadata = {
   title: 'Roshan Lal Ji Sweets & Restaurant — Authentic Indian Sweets Since Independence',
@@ -31,11 +33,13 @@ const featuredSweets = [
   { emoji: '🌹', tag: 'Seasonal', name: 'Gujiya', desc: 'Holi special khoya-filled pastries, fried to perfection', price: '₹380/kg', bg: 'bg-pink-50' },
 ];
 
-const features = [
-  { icon: '🫙', title: 'Pure Ingredients', desc: 'Made with pure ghee, finest khoya & real milk' },
-  { icon: '🧼', title: 'Hygienic Process', desc: 'Prepared in covered, sanitised workshops' },
-  { icon: '🚀', title: 'Pan-India Delivery', desc: 'Fresh sweets delivered across the country' },
-  { icon: '🎁', title: 'Custom Gifting', desc: 'Festive hampers for every celebration' },
+const whyLoveUs = [
+  { icon: Leaf, title: 'Premium Ingredients' },
+  { icon: ChefHat, title: 'Handmade Daily' },
+  { icon: Milk, title: 'Fresh Every Morning' },
+  { icon: Sparkles, title: 'Hygienic Kitchen' },
+  { icon: Gift, title: 'Beautiful Packaging' },
+  { icon: Heart, title: 'Trusted by Generations' },
 ];
 
 export default function Home() {
@@ -53,7 +57,7 @@ export default function Home() {
         ))}
       </div>
 
-      
+
       {/* Hero Banner */}
       <div className="bg-gradient-to-br from-maroon-dark via-maroon to-maroon-light min-h-[480px] flex items-center px-8 md:px-20 py-16 relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.04]"
@@ -87,18 +91,26 @@ export default function Home() {
         <span className="absolute text-gold/50 animate-pulse" style={{top:'35%',left:'72%',fontSize:'26px',animationDelay:'1s'}}>✦</span>
       </div>
 
-      {/* Features */}
-      <div className="bg-white grid grid-cols-2 md:grid-cols-4 border-b border-amber-100">
-        {features.map(f => (
-          <div key={f.title} className="p-6 md:p-8 flex items-start gap-4 border-r border-amber-100 last:border-r-0">
-            <div className="w-11 h-11 bg-gold-light rounded-xl flex items-center justify-center text-xl flex-shrink-0">{f.icon}</div>
-            <div>
-              <h4 className="font-bold text-sm text-brand-dark mb-1">{f.title}</h4>
-              <p className="text-xs text-amber-700/70 leading-relaxed">{f.desc}</p>
-            </div>
+      {/* Why Customers Love Us */}
+      <section className="bg-white px-6 md:px-10 py-14 border-b border-amber-100">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="font-playfair text-2xl md:text-3xl text-maroon font-bold text-center mb-10">
+            Why Customers Love Us
+          </h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-x-6 gap-y-10">
+            {whyLoveUs.map(item => (
+              <div key={item.title} className="flex flex-col items-center text-center gap-3">
+                <div className="w-14 h-14 rounded-full bg-gold-light flex items-center justify-center">
+                  <item.icon className="w-6 h-6 text-maroon" strokeWidth={1.75} />
+                </div>
+                <span className="text-xs md:text-sm font-semibold text-brand-dark leading-tight">
+                  {item.title}
+                </span>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
+        </div>
+      </section>
 
       {/* Signature Sweets */}
       <section className="bg-white px-6 md:px-10 py-14">
@@ -195,49 +207,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Trusted Across India — Stats */}
-      <section className="bg-white px-6 md:px-10 py-16">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="font-playfair text-3xl md:text-4xl text-brand-dark font-bold text-center mb-3">
-            Trusted Across India
-          </h2>
-          <p className="text-center text-amber-700/60 text-sm mb-12 max-w-xl mx-auto">
-            From family celebrations to weddings and festive gifting — Roshan Lal Ji Sweets is North India's most loved sweet destination.
-          </p>
+      <TrustTimeline />
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
-            {[
-              { number: '75+', label: 'Years of Legacy', emoji: '🪔' },
-              { number: '1,821+', label: 'Happy Customers', emoji: '⭐' },
-              { number: '500+', label: 'Weddings Celebrated', emoji: '💍' },
-              { number: 'Pan-India', label: 'Delivery Network', emoji: '🚀' },
-            ].map((stat) => (
-              <div
-                key={stat.label}
-                className="group relative border border-amber-200 rounded-2xl p-6 text-center cursor-default
-                  transition-all duration-300 ease-out
-                  hover:border-gold hover:shadow-gold-glow
-                  hover:-translate-y-1 hover:bg-gradient-to-b hover:from-white hover:to-amber-50"
-              >
-                {/* Glow ring on hover */}
-                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300
-                  ring-1 ring-gold/40 ring-offset-0" />
-
-                <div className="text-3xl mb-3 transition-transform duration-300 group-hover:scale-110">
-                  {stat.emoji}
-                </div>
-                <div className="font-playfair text-2xl md:text-3xl font-extrabold text-maroon mb-2 leading-none">
-                  {stat.number}
-                </div>
-                <div className="text-xs font-semibold text-amber-700/70 uppercase tracking-wider leading-tight">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
+          
       {/* Divider */}
       <div className="max-w-5xl mx-auto px-6 md:px-10">
         <hr className="border-amber-200" />
