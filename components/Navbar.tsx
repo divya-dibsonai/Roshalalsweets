@@ -27,9 +27,12 @@ export default function Navbar() {
         ✨ &nbsp; A Trusted Name for Over 60 Years &nbsp;|&nbsp; Pure Desi Ghee Preparation &nbsp; ✨
       </div>
 
+     {/* Sticky header group */}
+      <div className="sticky top-0 z-50">
       {/* Main Navbar */}
-      <nav className="bg-cream border-b border-amber-200 px-6 md:px-10 flex items-center gap-6 sticky top-0 z-50 shadow-sm">
-        {/* Logo */}
+      <nav className="bg-cream border-b border-amber-200 px-6 md:px-10 flex items-center gap-6 shadow-sm">
+        
+          {/* Logo */}
       
 
 <Image
@@ -60,15 +63,16 @@ export default function Navbar() {
           <Link
             key={link.href}
             href={link.href}
-            className={`px-4 py-3.5 text-[13px] font-medium whitespace-nowrap border-b-2 transition-all ${
+           className={`px-4 py-3.5 text-[13px] font-medium whitespace-nowrap rounded-md transition-all ${
               pathname === link.href
-                ? 'text-maroon border-maroon font-semibold'
-                : 'border-transparent text-brand-text hover:text-maroon hover:border-maroon'
+                ? 'bg-maroon text-white font-semibold'
+                : 'text-brand-text hover:bg-maroon hover:text-white'
             }`}
           >
             {link.label}
           </Link>
         ))}
+      </div>
       </div>
 
       {/* Mobile Menu */}

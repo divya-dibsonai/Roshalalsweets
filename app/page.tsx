@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import ProductCard from '@/components/ProductCard';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'Roshan Lal Ji Sweets & Restaurant — Authentic Indian Sweets Since Independence',
@@ -13,14 +14,14 @@ export const metadata: Metadata = {
 };
 
 const categories = [
-  { emoji: '🌿', label: 'Guilt-Free', bg: 'bg-green-50', href: '/sweets' },
-  { emoji: '🪔', label: 'Festive Special', bg: 'bg-amber-50', href: '/sweets' },
-  { emoji: '🍮', label: 'Mithai', bg: 'bg-pink-50', href: '/sweets' },
-  { emoji: '🍫', label: 'Chocolates', bg: 'bg-emerald-50', href: '/sweets' },
-  { emoji: '🌶️', label: 'Namkeen', bg: 'bg-yellow-50', href: '/namkeen' },
-  { emoji: '🥐', label: 'Bakery', bg: 'bg-purple-50', href: '/bakery' },
-  { emoji: '🎁', label: 'Gifting', bg: 'bg-blue-50', href: '/gifting' },
-  { emoji: '🍽️', label: 'Restaurant', bg: 'bg-orange-50', href: '/restaurant' },
+  { image: '/images/hero/Healthy.png', label: 'Guilt-Free', bg: 'bg-green-50', href: '/sweets' },
+  { image: '/images/hero/Festive.png', label: 'Festive Special', bg: 'bg-amber-50', href: '/sweets' },
+  { image: '/images/hero/Sweets.png', label: 'Mithai', bg: 'bg-pink-50', href: '/sweets' },
+  {image: '/images/hero/Chocolates.png', label: 'Chocolates', bg: 'bg-emerald-50', href: '/sweets' },
+  { image: '/images/hero/Namkeens.png', label: 'Namkeen', bg: 'bg-yellow-50', href: '/namkeen' },
+  { image: '/images/hero/Bakery.png', label: 'Bakery', bg: 'bg-purple-50', href: '/bakery' },
+  { image: '/images/hero/Gifting.png', label: 'Gifting', bg: 'bg-blue-50', href: '/gifting' },
+  { image: '/images/hero/Restaurant.png', label: 'Restaurant', bg: 'bg-orange-50', href: '/restaurant' },
 ];
 
 const featuredSweets = [
@@ -40,18 +41,19 @@ const features = [
 export default function Home() {
   return (
     <>
-      {/* Category Circles */}
+       {/* Category Circles */}
       <div className="bg-white px-6 md:px-10 py-7 flex gap-7 overflow-x-auto border-b border-amber-100">
         {categories.map(cat => (
           <Link key={cat.label} href={cat.href} className="flex flex-col items-center gap-2.5 cursor-pointer flex-shrink-0 group">
-            <div className={`w-20 h-20 rounded-full ${cat.bg} flex items-center justify-center text-3xl group-hover:scale-110 transition-transform`}>
-              {cat.emoji}
+            <div className={`w-20 h-20 rounded-full ${cat.bg} flex items-center justify-center overflow-hidden relative group-hover:scale-110 transition-transform`}>
+              <Image src={cat.image} alt={cat.label} fill className="object-cover" />
             </div>
             <span className="text-[12px] font-semibold text-brand-text text-center leading-tight">{cat.label}</span>
           </Link>
         ))}
       </div>
 
+      
       {/* Hero Banner */}
       <div className="bg-gradient-to-br from-maroon-dark via-maroon to-maroon-light min-h-[480px] flex items-center px-8 md:px-20 py-16 relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.04]"
