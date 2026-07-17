@@ -4,7 +4,7 @@ import { Trophy, Heart, Gem, Candy } from 'lucide-react';
 
 const stats = [
   { icon: Trophy, target: 75, suffix: '+', label: 'Years of Tradition', subtext: 'Serving Kasganj Since 1947' },
-  { icon: Heart, target: 1821, suffix: '+', label: 'Happy Families', subtext: 'Across Generations' },
+  { icon: Heart, target: 1900, suffix: '+', label: 'Happy Families', subtext: 'Across Generations' },
   { icon: Gem, target: 500, suffix: '+', label: 'Weddings Celebrated', subtext: 'Catering Excellence' },
   { icon: Candy, target: 100, suffix: '%', label: 'Freshly Prepared Daily', subtext: 'Traditional Recipes' },
 ];
