@@ -2,7 +2,8 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-import Image from 'next/image';  
+import Image from 'next/image'; 
+import { Phone, MapPin, MessageCircle } from 'lucide-react'; 
 
 const navLinks = [
   { href: '/', label: ' Home' },
@@ -47,9 +48,38 @@ export default function Navbar() {
 
 
       {/* Right icons */}
-        <div className="flex items-center gap-4 ml-auto">
+       {/* Right icons */}
+        <div className="flex items-center gap-2 md:gap-3 ml-auto">
+          
+            <a href="tel:+917055513961"
+            className="flex items-center gap-1.5 px-3 py-2 rounded-full border border-maroon/20 text-maroon text-xs font-semibold hover:bg-maroon hover:text-white transition-colors"
+          >
+            <Phone className="w-4 h-4" />
+            <span className="hidden lg:inline">Call Us</span>
+          </a>
+
+          
+            <a href="https://www.google.com/maps/search/?api=1&query=Roshan+Lal+Ji+Sweets+Nadrai+Gate+Kasganj"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 px-3 py-2 rounded-full border border-maroon/20 text-maroon text-xs font-semibold hover:bg-maroon hover:text-white transition-colors"
+          >
+            <MapPin className="w-4 h-4" />
+            <span className="hidden lg:inline">Visit Us</span>
+          </a>
+
+          
+            <a href="https://wa.me/917055513961"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 px-3 py-2 rounded-full border border-green-600/30 text-green-700 text-xs font-semibold hover:bg-green-600 hover:text-white transition-colors"
+          >
+            <MessageCircle className="w-4 h-4" />
+            <span className="hidden lg:inline">WhatsApp</span>
+          </a>
+
           {/* Hamburger */}
-          <button className="md:hidden ml-2 text-maroon" onClick={() => setMenuOpen(!menuOpen)}>
+          <button className="md:hidden ml-1 text-maroon" onClick={() => setMenuOpen(!menuOpen)}>
             <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
               {menuOpen ? <path d="M6 18L18 6M6 6l12 12"/> : <path d="M4 6h16M4 12h16M4 18h16"/>}
             </svg>
