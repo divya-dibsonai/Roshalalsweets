@@ -5,14 +5,14 @@ import { useState } from 'react';
 import Image from 'next/image';  
 
 const navLinks = [
-  { href: '/', label: '🏠 Home' },
-  { href: '/sweets', label: '🍬 Sweets' },
-  { href: '/namkeen', label: '🌶️ Namkeen & Snacks' },
-  { href: '/bhaji-box', label: '📦 Bhaji Box' },
-  { href: '/bakery', label: '🥐 Bakery' },
-  { href: '/restaurant', label: '🍽️ Restaurant' },
-  { href: '/gallery', label: '📸 Gallery' },
-  { href: '/about', label: '📖 About Us' },
+  { href: '/', label: ' Home' },
+  { href: '/sweets', label: 'Sweets' },
+  { href: '/namkeen', label: 'Namkeen & Snacks' },
+  { href: '/bhaji-box', label: 'Bhaji Box' },
+  { href: '/bakery', label: 'Bakery' },
+  { href: '/restaurant', label: 'Restaurant' },
+  { href: '/gallery', label: 'Gallery' },
+  { href: '/about', label: 'About Us' },
   { href: '/contact', label: '📍 Contact' },
 ];
 
@@ -41,18 +41,7 @@ export default function Navbar() {
   priority
 />
 
-        {/* Search */}
-        <div className="flex-1 max-w-lg mx-auto hidden md:flex items-center bg-amber-50 border border-amber-200 rounded-lg overflow-hidden">
-          <div className="px-3 py-2.5 text-xs font-semibold text-brand-text bg-amber-100 border-r border-amber-200 whitespace-nowrap">
-            All ▾
-          </div>
-          <input
-            type="text"
-            placeholder="Search for sweets, namkeen, bakery..."
-            className="flex-1 bg-transparent px-3 py-2.5 text-sm outline-none placeholder-amber-700/50"
-          />
-          <button className="bg-maroon text-white px-4 py-2.5 text-base">🔍</button>
-        </div>
+
 
       {/* Right icons */}
         <div className="flex items-center gap-4 ml-auto">

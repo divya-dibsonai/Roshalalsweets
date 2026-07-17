@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import PageHero from '@/components/PageHero';
 
 export const metadata: Metadata = {
   title: 'Bhaji Box — Exclusive Wedding Gifting Range',
@@ -33,13 +32,39 @@ const bhajiBoxes = Array.from({ length: 26 }, (_, i) => ({
 export default function BhajiBoxPage() {
   return (
     <>
-      <PageHero
-        emoji="📦"
-        tag="Exclusive Wedding Range"
-        title="The Bhaji Box"
-        highlight="Collection"
-        subtitle="Curated hampers of mithai, dry fruits & namkeen — every box is customisable in contents, design and packaging for your wedding celebration."
-      />
+      {/* Flyer-styled hero — cream & gold, matching the Premium Gifting 2024 catalogue */}
+      <div className="bg-cream relative overflow-hidden border-b border-amber-100">
+        <div
+          className="absolute inset-0 opacity-[0.07]"
+          style={{backgroundImage:`url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23B8860B' fill-opacity='1'%3E%3Cpath d='M20 20.5V18H0v5h5v5H0v5h20v-9.5zm-2 5.5H5v-5h13v5z'/%3E%3C/g%3E%3C/svg%3E")`}}
+        />
+
+        <div className="relative z-10 text-center px-8 pt-16 pb-8 max-w-2xl mx-auto">
+          <div className="inline-block border border-gold/50 rounded-full px-4 py-1.5 text-[11px] font-bold uppercase tracking-widest text-gold mb-6">
+            A Trusted Name Over 60 Years
+          </div>
+          <h1 className="font-playfair italic text-5xl md:text-6xl text-maroon font-bold mb-1 leading-tight">
+            Premium Gifting
+          </h1>
+          <p className="text-brand-text/70 text-sm leading-relaxed mb-2">
+            L. Roshan Lal Ji presents you with an
+          </p>
+          <p className="font-bold text-maroon text-xl tracking-wide mb-1">EXCLUSIVE BHAJI BOXES</p>
+          <p className="text-maroon/80 text-base">RANGE FOR <span className="font-bold">WEDDING</span></p>
+        </div>
+
+        {/* Real floral & couple illustration from the catalogue cover */}
+        <div className="relative w-full">
+          <Image
+            src="/images/bhaji-box/cover-floral.jpg"
+            alt=""
+            width={1600}
+            height={825}
+            className="w-full h-auto object-cover"
+            priority
+          />
+        </div>
+      </div>
 
       <section className="px-6 md:px-10 py-14 max-w-7xl mx-auto">
         <div className="flex items-end justify-between mb-9 flex-wrap gap-4">
