@@ -1,71 +1,96 @@
+import type { Metadata } from 'next';
+import Image from 'next/image';
 import PageHero from '@/components/PageHero';
-import Link from 'next/link';
 
-const boxes = [
-  { emoji: '🥦', name: 'Green Veggie Box', items: ['Palak Paneer', 'Baingan Bharta', 'Lauki Sabzi', 'Dal Tadka'], price: '₹299', serves: 'Serves 2–3', tag: 'Popular' },
-  { emoji: '🍅', name: 'Seasonal Special Box', items: ['Dum Aloo', 'Bhindi Masala', 'Arbi Fry', 'Mix Dal'], price: '₹349', serves: 'Serves 2–3', tag: 'Bestseller' },
-  { emoji: '🎉', name: 'Feast Box', items: ['Paneer Butter Masala', 'Dal Makhani', 'Gobi Matar', 'Raita + Pickle'], price: '₹499', serves: 'Serves 4–5', tag: 'Value Pack' },
-  { emoji: '🌿', name: 'Diet Box', items: ['Steamed Veggies', 'Moong Dal', 'Lauki Soup', 'Low-Oil Sabzi'], price: '₹249', serves: 'Serves 1–2', tag: 'Healthy' },
-];
+export const metadata: Metadata = {
+  title: 'Bhaji Box — Exclusive Wedding Gifting Range',
+  description: 'Explore our exclusive Bhaji Box range for weddings — premium MDF and jar hampers filled with mithai, dry fruits & namkeen. Fully customisable. Roshan Lal Ji, Kasganj, UP.',
+  openGraph: {
+    title: 'Bhaji Box | Roshan Lal Ji Sweets & Restaurant',
+    description: 'Exclusive Bhaji Boxes for weddings — premium hampers of mithai, dry fruits & namkeen, fully customisable for your celebration.',
+    url: 'https://roshanlalsweets.vercel.app/bhaji-box',
+  },
+};
+
+const WHATSAPP_NUMBER = '917055513961';
+
+function waLink(boxNumber: number) {
+  const message = encodeURIComponent(
+    `Hi! I'd like to enquire about Bhaji Box #${boxNumber} for my wedding order.`
+  );
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
+}
+
+// Each image is a full catalogue page (from our Premium Gifting Catalogue 2024)
+// showing the box photo, size tag, and full ingredient list already baked in —
+// no separate text data needed, the photo itself has everything.
+// Files are named 2.png-27.png (original catalogue page numbers).
+const bhajiBoxes = Array.from({ length: 26 }, (_, i) => ({
+  number: i + 1,
+  image: `/images/bhaji-box/${i + 2}.png`,
+}));
 
 export default function BhajiBoxPage() {
   return (
     <>
       <PageHero
         emoji="📦"
-        tag="Our Signature Offering"
-        title="The Bhaji"
-        highlight="Box"
-        subtitle="Curated seasonal vegetables, freshly cooked and packed with love. A wholesome meal experience delivered to your doorstep."
+        tag="Exclusive Wedding Range"
+        title="The Bhaji Box"
+        highlight="Collection"
+        subtitle="Curated hampers of mithai, dry fruits & namkeen — every box is customisable in contents, design and packaging for your wedding celebration."
       />
 
-      <section className="px-6 md:px-10 py-14 max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {boxes.map(box => (
-            <div key={box.name} className="bg-white rounded-2xl border border-amber-100 overflow-hidden hover:shadow-lg transition-all">
-              <div className="bg-gradient-to-br from-amber-50 to-orange-50 p-10 text-center text-7xl">{box.emoji}</div>
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-[10px] font-bold text-gold uppercase tracking-wider">{box.tag}</span>
-                  <span className="text-xs text-amber-700/70">{box.serves}</span>
-                </div>
-                <h3 className="font-playfair text-xl font-bold text-brand-dark mb-3">{box.name}</h3>
-                <ul className="space-y-1 mb-5">
-                  {box.items.map(item => (
-                    <li key={item} className="text-xs text-brand-text/75 flex items-center gap-2">
-                      <span className="text-gold">✓</span> {item}
-                    </li>
-                  ))}
-                </ul>
-                <div className="flex items-center justify-between">
-                  <div className="font-bold text-lg text-maroon">{box.price}</div>
-                  <button className="bg-maroon text-white px-5 py-2 rounded-full text-xs font-bold hover:bg-maroon-dark transition-colors">
-                    Order Now
-                  </button>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Info */}
-        <div className="mt-12 bg-gold-light rounded-2xl p-8 md:p-12 text-center">
-          <h3 className="font-playfair text-2xl text-maroon font-bold mb-3">How It Works</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
-            {[
-              { step: '1', title: 'Choose Your Box', desc: 'Pick from our curated meal boxes based on your taste & appetite' },
-              { step: '2', title: 'We Cook Fresh', desc: 'Our chefs cook your order fresh using seasonal vegetables & pure spices' },
-              { step: '3', title: 'Delivered Hot', desc: 'Packed carefully and delivered warm right to your doorstep' },
-            ].map(s => (
-              <div key={s.step} className="flex flex-col items-center">
-                <div className="w-12 h-12 bg-maroon text-white rounded-full flex items-center justify-center font-playfair text-xl font-bold mb-3">{s.step}</div>
-                <h4 className="font-bold text-sm text-brand-dark mb-1">{s.title}</h4>
-                <p className="text-xs text-amber-700/70 leading-relaxed">{s.desc}</p>
-              </div>
-            ))}
+      <section className="px-6 md:px-10 py-14 max-w-7xl mx-auto">
+        <div className="flex items-end justify-between mb-9 flex-wrap gap-4">
+          <div>
+            <h2 className="font-playfair text-2xl md:text-3xl text-maroon font-bold">Choose Your Bhaji Box</h2>
+            <p className="text-amber-700/70 text-sm mt-1">Tap any box to enquire on WhatsApp — item selection can be changed as per your choice</p>
           </div>
         </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+          {bhajiBoxes.map((box) => (
+            <a
+              key={box.number}
+              href={waLink(box.number)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group bg-white rounded-2xl overflow-hidden border border-amber-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-200 cursor-pointer block"
+            >
+              <div className="w-full aspect-[210/297] relative bg-amber-50">
+                <Image
+                  src={box.image}
+                  alt={`Bhaji Box ${box.number}`}
+                  fill
+                  className="object-cover object-top"
+                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                />
+              </div>
+              <div className="p-3 flex items-center justify-center gap-1.5 text-sm font-bold text-maroon">
+                💬 Enquire to Customize
+              </div>
+            </a>
+          ))}
+        </div>
       </section>
+
+      {/* Bottom CTA */}
+      <div className="bg-maroon mx-6 md:mx-10 mb-14 rounded-2xl p-10 md:p-14 flex flex-col md:flex-row items-center gap-8">
+        <div className="text-6xl">📦</div>
+        <div className="flex-1">
+          <h2 className="font-playfair text-2xl md:text-3xl text-cream font-bold mb-2">Planning a Wedding?</h2>
+          <p className="text-cream/75 text-sm leading-relaxed">Box design, item selection and bag branding can all be customised. Prices on request — let's plan your order together.</p>
+        </div>
+        <a
+          href={waLink(0)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex-shrink-0 bg-gold-pale text-maroon px-7 py-3 rounded-full font-bold text-sm hover:bg-gold transition-colors"
+        >
+          Chat With Us →
+        </a>
+      </div>
     </>
   );
 }
