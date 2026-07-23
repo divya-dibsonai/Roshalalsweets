@@ -1,12 +1,23 @@
+import Image from "next/image";
 interface PageHeroProps {
-  emoji: string;
+  emoji?: string;
+  image?: string;
+  imageAlt?: string;
+
   tag: string;
   title: string;
-  highlight?: string;
+  highlight: string;
   subtitle: string;
 }
-
-export default function PageHero({ emoji, tag, title, highlight, subtitle }: PageHeroProps) {
+export default function PageHero({
+  emoji,
+  image,
+  imageAlt,
+  tag,
+  title,
+  highlight,
+  subtitle,
+}: PageHeroProps){
   return (
     <div className="bg-gradient-to-br from-maroon-dark via-maroon to-maroon-light min-h-[260px] flex items-center px-8 md:px-16 py-14 relative overflow-hidden">
       {/* Pattern */}
@@ -28,9 +39,33 @@ export default function PageHero({ emoji, tag, title, highlight, subtitle }: Pag
         <p className="text-cream/75 text-base leading-relaxed max-w-lg">{subtitle}</p>
       </div>
 
-      <div className="absolute right-10 md:right-24 top-1/2 -translate-y-1/2 text-[100px] md:text-[130px] opacity-20 select-none">
-        {emoji}
-      </div>
+      <div className="absolute right-6 md:right-16 top-1/2 -translate-y-1/2 pointer-events-none">
+
+  {/* Soft Golden Glow */}
+  <div className="absolute inset-0 bg-yellow-300/20 blur-3xl rounded-full scale-125" />
+
+  {image ? (
+    <Image
+      src={image}
+      alt={imageAlt || "Hero Image"}
+      width={360}
+      height={360}
+      priority
+      className="
+        relative
+        w-56
+        md:w-72
+        h-auto
+        animate-float
+        drop-shadow-[0_20px_40px_rgba(255,215,100,0.35)]
+      "
+    />
+  ) : (
+    <div className="text-[100px] md:text-[130px] opacity-20">
+      {emoji}
+    </div>
+  )}
+</div>
     </div>
   );
 }

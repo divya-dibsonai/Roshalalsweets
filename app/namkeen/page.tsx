@@ -104,7 +104,8 @@ export default function NamkeenPage() {
   return (
     <>
       <PageHero
-        emoji="🌶️"
+        image="/namkeen.JPG"
+  imageAlt="Namkeen"
         tag="Crispy & Spicy"
         title="Namkeen &"
         highlight="Snacks"

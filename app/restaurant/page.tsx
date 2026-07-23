@@ -202,7 +202,8 @@ export default function RestaurantPage() {
   return (
     <>
       <PageHero
-        emoji="🍽️"
+        image="/restaurant.png"
+  imageAlt="Restaurant"
         tag="Dine With Us"
         title="Our"
         highlight="Restaurant"

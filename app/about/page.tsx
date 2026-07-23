@@ -75,7 +75,8 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
-        emoji="🪔"
+        image="/about.jpg"
+  imageAlt="us"
         tag="Est. Before 1947"
         title="Our"
         highlight="Story"

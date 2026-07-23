@@ -27,7 +27,8 @@ export default function GalleryPage() {
   return (
     <>
       <PageHero
-        emoji="📸"
+        image="/gallery.png"
+  imageAlt="Behind The Scenes"
         tag="A Visual Feast"
         title="Our"
         highlight="Gallery"

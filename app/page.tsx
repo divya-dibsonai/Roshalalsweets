@@ -79,12 +79,16 @@ export default function Home() {
           </Link>
         </div>
 
-        {/* Big decorative circle */}
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-80 h-80 md:w-[420px] md:h-[420px] rounded-full bg-white/5 flex items-center justify-center -mr-20">
-          <div className="w-60 h-60 md:w-80 md:h-80 rounded-full bg-gold/15 flex items-center justify-center text-[100px] md:text-[140px]">
-            🍬
-          </div>
-        </div>
+{/* Big decorative circle (shifted left) */}
+<div className="absolute right-6 md:right-12 top-1/2 -translate-y-1/2 w-80 h-80 md:w-[420px] md:h-[420px] rounded-full bg-white/5 flex items-center justify-center pointer-events-none">
+  <div className="w-60 h-60 md:w-80 md:h-80 rounded-full bg-gold/15 flex items-center justify-center overflow-hidden border-2 border-white/10 shadow-xl">
+    <img 
+      src="/home.jpg" 
+      alt="Brand Story Highlight" 
+      className="w-full h-full object-cover rounded-full"
+    />
+  </div>
+</div>
 
         <span className="absolute text-gold/60 animate-pulse" style={{top:'20%',left:'52%',fontSize:'22px'}}>✦</span>
         <span className="absolute text-gold/40 animate-pulse" style={{top:'70%',left:'62%',fontSize:'14px',animationDelay:'0.5s'}}>✦</span>

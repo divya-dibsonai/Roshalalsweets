@@ -19,7 +19,8 @@ export default function ContactPage() {
   return (
     <>
       <PageHero
-        emoji="📍"
+        image="/restaurant.png"
+  imageAlt="Contact Us"
         tag="Get In Touch"
         title="Reach"
         highlight="Us"
