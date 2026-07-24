@@ -1,6 +1,8 @@
 import fs from 'fs';
 import path from 'path';
 
+export const dynamic = 'force-dynamic';
+
 const IMAGE_EXTENSIONS = ['.png', '.jpg', '.jpeg', '.webp'];
 const GALLERY_ROOT = path.join(process.cwd(), 'public', 'images', 'gallery');
 
