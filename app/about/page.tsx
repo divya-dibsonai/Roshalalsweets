@@ -24,10 +24,10 @@ const timeline = [
 ];
 
 const verticals = [
-  { icon: '🍛', title: 'Restaurant', desc: 'Hot North Indian food served fresh, every day.' },
-  { icon: '🍰', title: 'Bakery', desc: 'Fresh-baked breads, cakes and pastries.' },
-  { icon: '🍬', title: 'Traditional Sweets', desc: 'Pure ghee mithai made the old way.' },
-  { icon: '🥜', title: 'Namkeen & Snacks', desc: 'Crisp, savoury snacks for every occasion.' },
+  { image: '/about-restaurant.png', title: 'Restaurant', desc: 'Hot North Indian food served fresh, every day.' },
+  { image: '/bakery.png', title: 'Bakery', desc: 'Fresh-baked breads, cakes and pastries.' },
+  { image: '/about-sweets.jpg', title: 'Traditional Sweets', desc: 'Pure ghee mithai made the old way.' },
+  { image: '/about-namkeen.png', title: 'Namkeen & Snacks', desc: 'Crisp, savoury snacks for every occasion.' },
 ];
 
 
@@ -107,6 +107,47 @@ export default function AboutPage() {
 
       {/* ── SECTION 3: TIMELINE ── */}
       <JourneyTimeline items={timeline} />
+
+
+
+      {/* ── SECTION 4: WHAT WE DO ── */}
+      <section className="px-6 md:px-10 py-20 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-14">
+          <DomainsVideo />
+          <div>
+            <p className="text-gold font-bold text-xs uppercase tracking-[0.2em] mb-2">What We Do</p>
+            <h2 className="font-playfair text-3xl md:text-4xl text-maroon font-bold mb-6">
+              One Roof, Four Traditions
+            </h2>
+            <p className="text-brand-text/70 text-sm leading-relaxed">
+              From our sweet counter to our kitchen, everything we make carries the same promise of purity and care — whether it's a festive mithai box, a hot thali, or a fresh-baked treat.
+            </p>
+          </div>
+        </div>
+ 
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {verticals.map((v) => (
+  <div
+    key={v.title}
+    className="bg-white rounded-2xl border border-amber-100 p-6 text-center hover:-translate-y-1 hover:border-gold transition-all duration-300"
+  >
+    <div className="relative w-16 h-16 mx-auto mb-4 rounded-full overflow-hidden border border-amber-100 bg-gold-light">
+      <Image
+        src={v.image}
+        alt={v.title}
+        fill
+        className="object-cover"
+        sizes="64px"
+      />
+    </div>
+    <h4 className="font-bold text-sm text-maroon mb-1.5">{v.title}</h4>
+    <p className="text-xs text-brand-text/70 leading-relaxed">{v.desc}</p>
+  </div>
+))}
+        </div>
+      </section>
+ 
+
 
       {/* ── SECTION 7: QUOTE ── */}
       <section className="relative px-6 md:px-10 py-24 text-center overflow-hidden">
