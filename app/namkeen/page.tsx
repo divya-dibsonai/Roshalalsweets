@@ -33,14 +33,7 @@ const namkeen = {
     { image: '/images/namkeen/Oats Chips- Punjabi Tadka.JPG', tag: 'Healthy', name: 'Oats Chips - Punjabi Tadka', desc: 'Crunchy oats chips with a Punjabi tadka twist', price: '₹200/kg', bg: 'bg-emerald-50' },
     { image: '/images/namkeen/Ragi Chips- Peri Peri.JPG', tag: 'Healthy', name: 'Ragi Chips - Peri Peri', desc: 'Crunchy ragi chips with a peri-peri kick', price: '₹200/kg', bg: 'bg-green-50' },
     { image: '/images/namkeen/Roasted Bajra Mix.JPG', tag: 'Healthy', name: 'Roasted Bajra Mix', desc: 'Wholesome roasted bajra snack mix', price: '₹180/kg', bg: 'bg-amber-50' },
-  ],
-  'Misc & Others': [
-    { image: '/images/namkeen/Mango Pickle.png', tag: 'Pickle', name: '1 Kg Pickle Mango/Mix', desc: 'Traditional pickle — mango, mixed or chilli', price: '₹—', bg: 'bg-red-50' },
-    { image: '/images/namkeen/Red Chilly Pickle.png', tag: 'Pickle', name: '1 Kg Pickle Red Chilli', desc: 'Spicy red chilli pickle', price: '₹—', bg: 'bg-red-50' },
-    { image: '/images/namkeen/Garlic Pickle.png', tag: 'Pickle', name: '500 Gm Garlic Pickle', desc: 'Spicy red chilli pickle', price: '₹—', bg: 'bg-red-50' },
-    { image: '/images/namkeen/Tenti Pickle.png', tag: 'Pickle', name: 'Tenti Pickle 500 Gm', desc: 'Tangy garlic or tenti pickle', price: '₹—', bg: 'bg-red-50' },
-    { image: '/images/namkeen/Thandai(Khas, Rose, Kesar Badam).png', tag: 'Festive', name: 'Thandai- Khas, Rose, Kesar Badam 750 Ml', desc: 'Khas Rose Saffron-almond flavoured thandai drink', price: '₹—', bg: 'bg-orange-50' },
-    ],
+  ]
 };
 
 export default function NamkeenPage() {
