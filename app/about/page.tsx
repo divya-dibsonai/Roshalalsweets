@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import PageHero from '@/components/PageHero';
+import HeroJourneyVideo from '@/components/about/HeroJourneyVideo';
+import DomainsVideo from '@/components/about/DomainsVideo';
+import StatsCounter from '@/components/about/StatsCounter';
+import JourneyTimeline from '@/components/about/JourneyTimeline';
 
 export const metadata: Metadata = {
   title: 'About Us — Our Story Since Before Independence',
@@ -13,241 +16,143 @@ export const metadata: Metadata = {
 };
 
 const timeline = [
-  {
-    year: 'Pre-1947',
-    label: 'Founded',
-    desc: 'Late Shri Roshan Lal Ji establishes the sweet shop with a mission to provide pure, quality sweets to the people of Kasganj.',
-    image: '/founder.jpg',
-    caption: 'Late Shri Roshan Lal Ji — Founder',
-  },
-  {
-    year: '1960s',
-    label: 'Growing Trust',
-    desc: 'Word spreads. Customers from surrounding districts make special trips for our signature Son Papdi and Kaju Katli.',
-    image: null,
-  },
-  {
-    year: '1980s',
-    label: 'Expansion',
-    desc: 'Second generation joins the business. Restaurant wing added to serve hot North Indian food.',
-    image: '/kailash.JPG',
-    caption: 'Shri Kailash Chand Ji — Second Generation',
-  },
-  {
-    year: '2000s',
-    label: 'Modernisation',
-    desc: 'Hygienic workshop upgrades, new product lines including bakery items and Bhaji Box introduced.',
-    image: null,
-  },
-  {
-    year: 'Today',
-    label: 'Pan-India Reach',
-    desc: 'Customers from all corners of India order online. Third generation upholding the original legacy.',
-    image: null,
-  },
+  { year: 'Pre-1947', label: 'Founded', desc: 'Late Shri Roshan Lal Ji establishes the sweet shop with a mission to provide pure, quality sweets.', image: '/founder.jpg', caption: 'Late Shri Roshan Lal Ji — Founder' },
+  { year: '1960s', label: 'Growing Trust', desc: 'Customers from surrounding districts make special trips for our signature Son Papdi and Kaju Katli.', image: null },
+  { year: '1980s', label: 'Expansion', desc: 'Second generation joins. Restaurant wing added to serve hot North Indian food.', image: '/kailash.JPG', caption: 'Shri Kailash Chand Ji — Second Generation' },
+  { year: '2000s', label: 'Modernisation', desc: 'Hygienic workshop upgrades, new bakery and Bhaji Box lines introduced.', image: null },
+  { year: 'Today', label: 'Pan-India Reach', desc: 'Customers from all corners of India. Fourth generation upholding the legacy.', image: null },
 ];
 
-const values = [
-  { icon: '🫙', title: 'Pure Ingredients', desc: 'We never compromise on quality. Every sweet is made with pure ghee, real khoya and finest ingredients.' },
-  { icon: '🧼', title: 'Hygienic Standards', desc: 'Our workshop is covered and sanitised daily. Cleanliness is not optional — it is our founding principle.' },
-  { icon: '❤️', title: 'Family Values', desc: 'Run by family, for families. We treat every customer with the warmth we would a guest in our home.' },
-  { icon: '🌱', title: 'Quality Promise', desc: 'We would rather sell less than compromise on quality. This is the promise Roshan Lal Ji made, and we honour it.' },
+const verticals = [
+  { icon: '🍛', title: 'Restaurant', desc: 'Hot North Indian food served fresh, every day.' },
+  { icon: '🍰', title: 'Bakery', desc: 'Fresh-baked breads, cakes and pastries.' },
+  { icon: '🍬', title: 'Traditional Sweets', desc: 'Pure ghee mithai made the old way.' },
+  { icon: '🥜', title: 'Namkeen & Snacks', desc: 'Crisp, savoury snacks for every occasion.' },
 ];
 
-const founders = [
-  {
-    name: 'Late Shri Roshan Lal Ji',
-    role: 'Founder & Visionary',
-    desc: 'Founded the shop before India\'s independence with a singular vision — pure sweets, made with love and honesty.',
-    image: '/founder.jpg',
-    generation: '1st Generation',
-  },
-  {
-    name: 'Shri Kailash Chand Ji',
-    role: 'Second Generation',
-    desc: 'Expanded the legacy, added the restaurant, and continued the tradition of quality that his father built.',
-    image: '/kailash.JPG',
-    generation: '2nd Generation',
-  },
+
+const galleryImages = [
+  { src: '/founder.jpg', size: 'large' },
+  { src: '/bakery.png', size: 'small' },
+  { src: '/sweet.png', size: 'small' },
+  { src: '/kailash.JPG', size: 'large' },
 ];
 
 export default function AboutPage() {
   return (
     <>
-      <PageHero
-        image="/about.jpg"
-  imageAlt="us"
-        tag="Est. Before 1947"
-        title="Our"
-        highlight="Story"
-        subtitle="A family-run sweet shop that has stood the test of time — serving pure, delicious sweets with love since before India's independence."
-      />
+      {/* ── SECTION 1: HERO ── */}
+      <section className="min-h-[75vh] flex items-center bg-cream px-6 md:px-10 py-16">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center w-full">
+          <div>
+            <p className="text-gold font-bold text-xs uppercase tracking-[0.2em] mb-4">
+              80+ Years of Sweet Traditions
+            </p>
+            <h1 className="font-playfair text-4xl md:text-5xl lg:text-6xl font-bold text-maroon leading-tight mb-6">
+              Four generations.
+              <br />
+              Thousands of celebrations.
+              <br />
+              One commitment to
+              <br />
+              authentic taste.
+            </h1>
+            <a
+              href="#story"
+              className="inline-block text-sm font-semibold text-brand-dark border-b-2 border-gold pb-1 hover:text-maroon transition-colors"
+            >
+              Scroll to Explore ↓
+            </a>
+          </div>
 
-      {/* Mission */}
-      <section className="px-6 md:px-10 py-16 max-w-4xl mx-auto">
-        <div className="text-center mb-14">
-          <h2 className="font-playfair text-3xl md:text-4xl text-maroon font-bold mb-5">A Little Bit About Us</h2>
-          <p className="text-brand-text/75 text-base leading-relaxed mb-4">
-            Today, <strong>Roshan Lal Ji Sweets</strong> is a reputed sweet and confectionery brand in North India. We are known for the excellent quality of sweets and namkeen we make and have won accolades amongst our customers.
-          </p>
-          <p className="text-brand-text/70 text-sm leading-relaxed mb-4">
-            Our mission arose from a dissatisfaction with the poor quality of sweets being sold by numerous shops, most prepared using poor quality ingredients under unhygienic conditions. We set out to create a one-stop solution — good quality sweets made of fine ingredients at affordable rates.
-          </p>
-          <p className="text-brand-text/70 text-sm leading-relaxed">
-            Roshan Lal Ji Sweets has earned such a reputation that we are always flooded with customers who throng from all corners of the country to purchase our delicious sweets. Some of our specialties include son papdi, mawa sweets, kaju katli and many other delicacies — and we are especially famous for our festive sweets like Gujiyas, Ghaver, and Gazar Pag.
-          </p>
+          <HeroJourneyVideo />
         </div>
+      </section>
 
-        {/* Values */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-20">
-          {values.map(v => (
-            <div key={v.title} className="bg-white rounded-2xl border border-amber-100 p-7 flex gap-4">
-              <div className="text-3xl flex-shrink-0">{v.icon}</div>
-              <div>
-                <h4 className="font-bold text-sm text-maroon mb-1.5">{v.title}</h4>
-                <p className="text-xs text-brand-text/70 leading-relaxed">{v.desc}</p>
-              </div>
+      {/* ── SECTION 2: OUR STORY ── */}
+      <section id="story" className="px-6 md:px-10 py-20 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="relative rounded-[24px] overflow-hidden shadow-lg border border-amber-100 group">
+            <Image
+              src="/founder.jpg"
+              alt="Heritage storefront"
+              width={700}
+              height={850}
+              className="w-full h-auto sepia-[0.25] group-hover:sepia-0 group-hover:scale-105 transition-all duration-700"
+            />
+          </div>
+
+          <div className="flex gap-6">
+            <div className="w-[2px] bg-gold flex-shrink-0" />
+            <div>
+              <p className="text-gold font-bold text-xs uppercase tracking-[0.2em] mb-2">
+                Since Before 1947
+              </p>
+              <h2 className="font-playfair text-3xl md:text-4xl text-maroon font-bold mb-6">
+                Serving Happiness Across Generations
+              </h2>
+              <p className="text-brand-text/75 text-base leading-relaxed mb-4">
+                Today, <strong>Roshan Lal Ji Sweets</strong> is a reputed sweet and confectionery brand in North India. We are known for the excellent quality of sweets and namkeen we make and have won accolades amongst our customers.
+              </p>
+              <p className="text-brand-text/70 text-sm leading-relaxed mb-4">
+                Our mission arose from a dissatisfaction with the poor quality of sweets being sold by numerous shops, most prepared using poor quality ingredients under unhygienic conditions. We set out to create a one-stop solution — good quality sweets made of fine ingredients at affordable rates.
+              </p>
+              <p className="text-brand-text/70 text-sm leading-relaxed">
+                Roshan Lal Ji Sweets has earned such a reputation that we are always flooded with customers who throng from all corners of the country to purchase our delicious sweets. Some of our specialties include son papdi, mawa sweets, kaju katli and many other delicacies — and we are especially famous for our festive sweets like Gujiyas, Ghaver, and Gazar Pag.
+              </p>
             </div>
-          ))}
+          </div>
         </div>
+      </section>
 
-        {/* ── MEET THE FAMILY ── */}
-        <div className="mb-20">
-          <h2 className="font-playfair text-3xl md:text-4xl text-maroon font-bold text-center mb-3">
-            The Family Behind the Legacy
+      {/* ── SECTION 3: TIMELINE ── */}
+      <JourneyTimeline items={timeline} />
+
+      {/* ── SECTION 7: QUOTE ── */}
+      <section className="relative px-6 md:px-10 py-24 text-center overflow-hidden">
+        {/* faded floral pattern background */}
+        <svg
+          className="absolute inset-0 w-full h-full opacity-[0.04] pointer-events-none"
+          viewBox="0 0 400 400"
+          preserveAspectRatio="xMidYMid slice"
+        >
+          <circle cx="50" cy="50" r="30" fill="none" stroke="#6D1F1F" strokeWidth="2" />
+          <circle cx="350" cy="80" r="45" fill="none" stroke="#6D1F1F" strokeWidth="2" />
+          <circle cx="80" cy="350" r="40" fill="none" stroke="#6D1F1F" strokeWidth="2" />
+          <circle cx="330" cy="340" r="25" fill="none" stroke="#6D1F1F" strokeWidth="2" />
+          <circle cx="200" cy="200" r="60" fill="none" stroke="#6D1F1F" strokeWidth="1.5" />
+        </svg>
+
+        <div className="relative max-w-3xl mx-auto">
+          <p className="font-playfair text-2xl md:text-3xl text-maroon italic leading-relaxed">
+            &ldquo;For over 80 years, families have trusted Roshan Lal Sweets to be part of their happiest moments.&rdquo;
+          </p>
+        </div>
+      </section>
+
+      {/* ── SECTION 8: STATISTICS ── */}
+      <section className="bg-maroon px-6 md:px-10 py-20">
+        <div className="max-w-5xl mx-auto">
+          <StatsCounter />
+        </div>
+      </section>
+
+      {/* ── SECTION 9: CTA ── */}
+      <section className="bg-brand-dark px-6 md:px-10 py-20 text-center">
+        <div className="max-w-2xl mx-auto">
+          <h2 className="font-playfair text-3xl md:text-4xl text-cream font-bold mb-4">
+            Experience a Legacy of Taste
           </h2>
-          <p className="text-center text-brand-text/60 text-sm mb-10">
-            Three generations of dedication, love, and pure ghee sweets.
+          <p className="text-cream/70 text-sm leading-relaxed mb-8">
+            Visit us today and discover why generations have trusted Roshan Lal Sweets.
           </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {founders.map(person => (
-              <div
-                key={person.name}
-                className="bg-white rounded-2xl border border-amber-100 overflow-hidden shadow-sm hover:shadow-md transition-shadow"
-              >
-                {/* Photo */}
-                <div className="relative w-full bg-amber-50">
-  <Image
-    src={person.image}
-    alt={person.name}
-    width={600}
-    height={800}
-    className="w-full h-auto sepia-[0.3] hover:sepia-0 transition-all duration-500"
-  />
-                  {/* Generation badge */}
-                  <div className="absolute top-3 left-3 bg-maroon text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">
-                    {person.generation}
-                  </div>
-                  {/* Vintage vignette overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent rounded-t-2xl" />
-                </div>
-
-                {/* Info */}
-                <div className="p-6">
-                  <h3 className="font-playfair text-xl font-bold text-maroon mb-0.5">{person.name}</h3>
-                  <p className="text-[11px] font-semibold text-gold uppercase tracking-widest mb-3">{person.role}</p>
-                  <p className="text-sm text-brand-text/70 leading-relaxed">{person.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+          <a
+            href="/contact"
+            className="inline-block bg-gold text-brand-dark px-8 py-3.5 rounded-full text-sm font-bold hover:bg-gold-pale transition-colors"
+          >
+            Visit Store
+          </a>
         </div>
-
-        {/* ── TIMELINE ── */}
-        <div id="story">
-          <h2 className="font-playfair text-3xl md:text-4xl text-maroon font-bold text-center mb-3">Our Journey</h2>
-          <p className="text-center text-brand-text/60 text-sm mb-12">Over 75 years of sweetness, tradition, and trust.</p>
-
-          <div className="relative">
-            {/* Center line */}
-            <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-amber-200" />
-
-            <div className="space-y-10">
-              {timeline.map((m, i) => (
-                <div
-                  key={m.year}
-                  className={`relative flex gap-6 md:gap-0 items-start ${
-                    i % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'
-                  }`}
-                >
-                  {/* Year label — desktop */}
-                  <div
-                    className={`hidden md:flex w-1/2 items-start pt-4 ${
-                      i % 2 === 1 ? 'justify-start pl-10' : 'justify-end pr-10'
-                    }`}
-                  >
-                    <span className="font-playfair font-bold text-maroon text-xl">{m.year}</span>
-                  </div>
-
-                  {/* Dot */}
-                  <div className="absolute left-6 md:left-1/2 top-5 -translate-x-1/2 w-4 h-4 bg-maroon rounded-full border-4 border-amber-50 z-10" />
-
-                  {/* Card */}
-                  <div className={`flex-1 md:w-1/2 pl-12 md:pl-0 ${i % 2 === 1 ? 'md:pr-10' : 'md:pl-10'}`}>
-                    {/* Year — mobile */}
-                    <span className="md:hidden font-playfair font-bold text-maroon text-base block mb-1">{m.year}</span>
-
-                    <div className="bg-white rounded-2xl border border-amber-100 overflow-hidden shadow-sm">
-                      {/* Photo if available */}
-                      {m.image && (
-                        <div className="relative w-full">
-  <Image
-    src={m.image}
-    alt={m.caption || m.label}
-    width={600}
-    height={800}
-    className="w-full h-auto sepia-[0.4]"
-  />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-                          {m.caption && (
-                            <p className="absolute bottom-2 left-0 right-0 text-center text-white text-[11px] italic font-medium px-4">
-                              {m.caption}
-                            </p>
-                          )}
-                        </div>
-                      )}
-
-                      <div className="p-5">
-                        <div className="text-[10px] font-bold text-gold uppercase tracking-widest mb-1">{m.label}</div>
-                        <p className="text-xs text-brand-text/75 leading-relaxed">{m.desc}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section id="reviews" className="bg-gold-light px-6 md:px-10 py-14">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="font-playfair text-3xl text-maroon font-bold text-center mb-9">Customer Reviews</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {[
-              { text: 'The best Son Papdi I have ever tasted! We order every Diwali without fail. True family tradition.', author: 'Priya S., Delhi' },
-              { text: "Roshan Lal Ji sweets are synonymous with purity. I've been eating these since childhood. No one matches this quality.", author: 'Rahul M., Lucknow' },
-              { text: "Ordered for my sister's wedding. All guests were raving. The packaging was beautiful too — highly recommend!", author: 'Anjali K., Patna' },
-            ].map(t => (
-              <div key={t.author} className="bg-white rounded-2xl p-7 border border-amber-200">
-                <div className="text-gold text-base tracking-widest mb-3">★★★★★</div>
-                <p className="text-sm text-brand-text leading-relaxed italic mb-4">"{t.text}"</p>
-                <div className="text-xs font-bold text-maroon">— {t.author}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Sign-off */}
-      <section className="px-6 md:px-10 py-14 max-w-2xl mx-auto text-center">
-        <div className="text-4xl mb-4">🪔</div>
-        <p className="text-brand-text/70 text-sm leading-relaxed italic mb-4">
-          "We value, relish and cherish your wishes. Verily, this will add the fuel to conduct some more useful work for our customers across the globe. Always beseeching your sincere blessings and wise counsel, with choicest wishes & regards."
-        </p>
-        <p className="font-bold text-sm text-maroon">— Managing Team, Roshan Lal Ji Sweets</p>
       </section>
     </>
   );
