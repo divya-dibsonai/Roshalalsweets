@@ -128,7 +128,7 @@ const sweets = [
   { image: '/images/sweets/Sada Meetha Ghevar.png', tag: 'Monsoon Special', name: 'Sada Meetha Ghevar', desc: 'Classic sweetened ghevar, simple and traditional', price: 'TBD', bg: 'bg-green-50', category: 'Seasonal Sweets' },
   { emoji: '🍂', tag: 'Monsoon Special', name: 'Soot Faini', desc: 'Thread-like fried sweet, light and crisp', price: 'TBD', bg: 'bg-green-50', category: 'Seasonal Sweets' },
   { emoji: '🍂', tag: 'Guilt Free', name: 'Sugar Less Ghevar', desc: 'Sugar-free ghevar for a healthier monsoon treat', price: 'TBD', bg: 'bg-green-50', category: 'Seasonal Sweets' },
-  { emoji: '🥘', tag: 'Snacks', name: 'Badam Milk (Rlkc)', desc: 'Warm almond-flavoured milk from our restaurant counter', price: 'TBD', bg: 'bg-gray-50', category: 'Snacks' },
+  { image: '/images/sweets/Badam Milk.png', tag: 'Snacks', name: 'Badam Milk (Rlkc)', desc: 'Warm almond-flavoured milk from our restaurant counter', price: 'TBD', bg: 'bg-gray-50', category: 'Snacks' },
   { image: '/images/sweets/Kachori.png', tag: 'Snacks', name: 'Bedmi Thali', desc: 'Spiced urad dal kachori served with a full thali', price: 'TBD', bg: 'bg-gray-50', category: 'Snacks' },
   { emoji: '🥘', tag: 'Snacks', name: 'Cholle Bhature (Rlkc)', desc: 'Spiced chickpea curry served with fluffy fried bread', price: 'TBD', bg: 'bg-gray-50', category: 'Snacks' },
   { image: '/images/sweets/Dhokla.png', tag: 'Snacks', name: 'Dhokla/Khandavi', desc: 'Steamed savoury Gujarati snack, soft and tangy', price: 'TBD', bg: 'bg-gray-50', category: 'Snacks' },
@@ -163,7 +163,7 @@ export default function SweetsPage() {
   return (
     <>
       <PageHero
-        image="/sweets.png"
+        image="/sweet.png"
         imageAlt="Traditional Indian Sweets"
 
         tag="Handcrafted with Love"

@@ -27,7 +27,7 @@ export default function BakeryPage() {
   return (
     <>
       <PageHero
-        image="/bakery.jpg"
+        image="/bakery.png"
         imageAlt="Fresh Bakery"
         tag="Baked Fresh Daily"
         title="Bakery"

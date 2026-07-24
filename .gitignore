@@ -36,3 +36,14 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 Final Roshanlal Ji Premium Gifting Catalouge 2024.pdf
+
+# next-video
+videos/*
+!videos/*.json
+!videos/*.js
+!videos/*.ts
+public/_next-video
+
+# Environment variables
+.env.local
+.env*
