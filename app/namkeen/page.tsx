@@ -40,7 +40,7 @@ export default function NamkeenPage() {
   return (
     <>
       <PageHero
-        image="/namkeen.jpg"
+        image="/about-namkeen.png"
         imageAlt="Namkeen"
         tag="Crispy & Spicy"
         title="Namkeen &"
