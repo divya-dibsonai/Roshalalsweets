@@ -19,7 +19,6 @@ const categories = [
   { image: '/images/hero/Healthy.png', label: 'Guilt-Free', bg: 'bg-green-50', href: '/sweets' },
   { image: '/images/hero/Festive.png', label: 'Festive Special', bg: 'bg-amber-50', href: '/sweets' },
   { image: '/images/hero/Sweets.png', label: 'Mithai', bg: 'bg-pink-50', href: '/sweets' },
-  {image: '/images/hero/Chocolates.png', label: 'Chocolates', bg: 'bg-emerald-50', href: '/sweets' },
   { image: '/images/hero/Namkeens.png', label: 'Namkeen', bg: 'bg-yellow-50', href: '/namkeen' },
   { image: '/images/hero/Bakery.png', label: 'Bakery', bg: 'bg-purple-50', href: '/bakery' },
   { image: '/images/hero/Gifting.png', label: 'Gifting', bg: 'bg-blue-50', href: '/gifting' },
@@ -178,40 +177,123 @@ export default function Home() {
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           <div>
             <div className="text-[11px] font-bold text-gold uppercase tracking-widest mb-3">Our Special Offering</div>
-            <h2 className="font-playfair text-4xl text-maroon font-extrabold leading-tight mb-4">The Bhaji Box 📦</h2>
+            <h2 className="font-playfair text-4xl text-maroon font-extrabold leading-tight mb-4">The Bhaji Box </h2>
             <p className="text-brand-text/80 text-sm leading-relaxed mb-6">
-              Our signature Bhaji Box brings a curated selection of seasonal vegetables, freshly cooked and packed with love — a wholesome meal delivered to your doorstep.
+              Celebrate life’s sweetest moments with our bespoke Bhaji Gift Boxes. Handcrafted with authentic flavors, timeless recipes, and luxurious packaging, each box is an exquisite gesture of grace, gratitude, and grandeur.
             </p>
             <Link href="/bhaji-box" className="inline-block bg-maroon text-white px-7 py-3 rounded-full font-bold text-sm hover:bg-maroon-dark transition-colors">
               Explore Bhaji Box →
             </Link>
           </div>
-          <div className="text-center text-[110px]">🫕</div>
+          <div className="relative flex justify-center items-center py-6">
+  {/* Ambient golden glow behind the image */}
+  <div className="absolute w-[600px] h-[420px] rounded-full bg-yellow-400/40 blur-[80px]" />
+
+  <Image
+    src="/bhaji-box.png"
+    alt="Bhaji Box"
+    width={520}
+    height={340}
+    className="relative rounded-2xl shadow-[0_0_40px_10px_rgba(250,204,21,0.5)]"
+    style={{
+      maskImage:
+        "radial-gradient(ellipse 85% 85% at center, black 65%, transparent 100%)",
+      WebkitMaskImage:
+        "radial-gradient(ellipse 85% 85% at center, black 65%, transparent 100%)",
+    }}
+  />
+</div>
         </div>
       </section>
 
       {/* Testimonials */}
-      <section className="bg-gold-light px-6 md:px-10 py-14">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="font-playfair text-3xl text-maroon font-bold text-center mb-2">What Our Customers Say</h2>
-          <p className="text-center text-amber-700/70 text-sm mb-9">Trusted by families across North India</p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {[
-              { text: 'The best Son Papdi I have ever tasted! Melts in your mouth instantly. We order every Diwali without fail. True family tradition.', author: 'Priya S., Delhi' },
-              { text: "Roshan Lal Ji sweets are synonymous with purity. I've been eating these since childhood. The Kaju Katli is extraordinary — no one matches this quality.", author: 'Rahul M., Lucknow' },
-              { text: "Ordered for my sister's wedding. All guests were raving about the sweets. The packaging was beautiful too. Highly recommend for gifting!", author: 'Anjali K., Patna' },
-            ].map(t => (
-              <div key={t.author} className="bg-white rounded-2xl p-7 border border-amber-200">
-                <div className="text-gold text-base tracking-widest mb-3">★★★★★</div>
-                <p className="text-sm text-brand-text leading-relaxed italic mb-4">"{t.text}"</p>
-                <div className="text-xs font-bold text-maroon">— {t.author}</div>
-              </div>
-            ))}
+<section className="bg-gold-light px-6 md:px-10 py-14">
+  <div className="max-w-6xl mx-auto">
+    <h2 className="font-playfair text-3xl text-maroon font-bold text-center mb-2">
+      What Our Customers Say
+    </h2>
+    <p className="text-center text-amber-700/70 text-sm mb-4">
+      Trusted by families across North India
+    </p>
+
+    {/* Trust Header Badge */}
+    <div className="flex justify-center mb-9">
+      <div className="inline-flex items-center gap-2 bg-white border border-amber-200 rounded-full px-5 py-2 shadow-sm">
+        <span className="text-gold text-sm tracking-widest">★★★★★</span>
+        <span className="text-xs md:text-sm font-bold text-maroon">4.9 Rating on Google</span>
+        <span className="text-xs md:text-sm text-amber-700/70">(1900+ reviews)</span>
+      </div>
+    </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+      {[
+        {
+          text: "Highly recommended in kasganj. We had chilly garlic noodles and veg Manchurian gravy that was a must try. Masala dosa was super crispy and sambhar was fresh and authentic taste. We had veg supreme pizza loaded with melted cheese — I personally loved it.",
+          author: "Apurva Dubey",
+          meta: "Local Guide · 23 reviews",
+          rating: 4,
+        },
+        {
+          text: "One and only famous Top class sweets showroom of kasganj :- Roshanlal ji sweets. All sweets are best, specially different variety of Ghewar. Now you can have special samosa filled by capsicum paneer carrot. Chocolate, pastry, coldrinks also available here.",
+          author: "Rahul Verma",
+          meta: "Local Guide · 200 reviews",
+          rating: 5,
+        },
+        {
+          text: "Variety of sweets. Ambience is good. They have maintained the quality and variety of sweets. Taste is amazing. I just loved it. It is at very reasonable price.",
+          author: "Ankita Verma",
+          meta: "Local Guide · 249 reviews",
+          rating: 5,
+        },
+      ].map((t) => (
+        <div key={t.author} className="bg-white rounded-2xl p-7 border border-amber-200 flex flex-col">
+          <div className="text-gold text-base tracking-widest mb-3">
+            {"★".repeat(t.rating)}
+            <span className="text-amber-200">{"★".repeat(5 - t.rating)}</span>
+          </div>
+
+          <p className="text-sm text-brand-text leading-relaxed italic mb-5 flex-1">
+            "{t.text}"
+          </p>
+
+          <div className="flex items-center gap-3 pt-4 border-t border-amber-100">
+            <div className="w-9 h-9 rounded-full bg-maroon text-white flex items-center justify-center text-sm font-bold shrink-0">
+              {t.author.charAt(0)}
+            </div>
+            <div className="flex flex-col">
+              <span className="text-xs font-bold text-maroon">{t.author}</span>
+              <span className="flex items-center gap-1 text-[11px] text-amber-700/70">
+                {t.meta}
+                <svg className="w-3 h-3 shrink-0" viewBox="0 0 48 48">
+                  <path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/>
+                  <path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/>
+                  <path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/>
+                  <path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/>
+                </svg>
+                Verified
+              </span>
+            </div>
           </div>
         </div>
-      </section>
+      ))}
+    </div>
 
-      <TrustTimeline />
+    {/* CTA */}
+    <div className="flex justify-center mt-10">
+      
+        <a 
+        href="https://www.google.com/search?q=roshanlal+kasganj&oq=roshanlal&gs_lcrp=EgZjaHJvbWUqCAgCEEUYJxg7MgYIABBFGDwyBwgBEC4YgAQyCAgCEEUYJxg7MgYIAxBFGDsyDAgEEC4YJxivARjHATIGCAUQRRg8MgYIBhBFGDwyBggHEEUYPNIBCDYwNTVqMGo3qAIIsAIB8QWYcoz90Ziq4fEFmHKM_dGYquE&sourceid=chrome&source=chrome.ob&ie=UTF-8"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-2 bg-white border-2 border-maroon text-maroon font-bold text-sm px-7 py-3 rounded-full hover:bg-maroon hover:text-white transition-colors"
+      >
+        See All Google Reviews →
+      </a>
+    </div>
+  </div>
+</section>
+
+<TrustTimeline />
 
           
       {/* Divider */}
@@ -219,35 +301,119 @@ export default function Home() {
         <hr className="border-amber-200" />
       </div>
 
-      {/* Featured In — Media Logos */}
-      <section className="bg-white px-6 md:px-10 py-12">
-        <div className="max-w-5xl mx-auto">
-          <h3 className="font-playfair text-2xl text-brand-dark font-bold text-center mb-10">
-            Featured In
-          </h3>
-          <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6">
-            {[
-              { name: 'Dainik Jagran', style: 'font-extrabold text-red-700 text-lg tracking-tight' },
-              { name: 'Amar Ujala', style: 'font-black text-blue-700 text-lg italic' },
-              { name: 'Times of India', style: 'font-bold text-gray-800 text-base tracking-wide' },
-              { name: 'JustDial', style: 'font-extrabold text-orange-500 text-lg' },
-              { name: 'MagicPin', style: 'font-black text-purple-600 text-lg' },
-              { name: 'TripAdvisor', style: 'font-bold text-green-600 text-base tracking-tight' },
-            ].map((media) => (
-              <div
-                key={media.name}
-                className="group px-5 py-3 rounded-xl border border-transparent
-                  hover:border-amber-200 hover:shadow-md hover:bg-amber-50/60
-                  transition-all duration-200 cursor-default"
-              >
-                <span className={`${media.style} opacity-60 group-hover:opacity-100 transition-opacity duration-200`}>
-                  {media.name}
-                </span>
-              </div>
-            ))}
+{/* Featured In */}
+<section className="bg-white px-6 md:px-10 py-16">
+  <div className="max-w-5xl mx-auto">
+    <h2 className="font-playfair text-3xl text-brand-dark font-bold text-center mb-1">
+      As Featured in National Media 📰
+    </h2>
+    <p className="text-center text-amber-700/70 text-sm mb-12">
+      Our story, covered by leading Indian news outlets
+    </p>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+      {/* ETV Bharat feature */}
+      
+        <a
+        href="https://www.etvbharat.com/hindi/uttar-pradesh/state/kasganj/up-one-search-sohan-crust-of-native-ghee-roshanlal-sweets-kasganj/up20220528143954790790288"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group block bg-gold-light rounded-2xl p-6 border border-amber-200 hover:border-maroon transition-colors"
+      >
+        <div className="text-xs font-bold text-maroon uppercase tracking-wide mb-2">
+          ETV Bharat
+        </div>
+        <p className="text-sm text-brand-text leading-relaxed mb-3">
+          80 साल पुरानी कासगंज की देशी घी सोहन पापड़ी — देश-विदेश तक मशहूर। ETV Bharat featured our family's 4th-generation recipe, still shipped to relatives abroad for every festival.
+        </p>
+        <span className="inline-flex items-center gap-1 text-xs font-bold text-maroon group-hover:underline">
+          Read Full Feature →
+        </span>
+      </a>
+
+      {/* Dainik Bhaskar feature */}
+      <a
+        href="https://www.bhaskar.com/local/uttar-pradesh/kasganj/news/complete-story-of-famous-roshan-lal-sohan-papdi-in-kasganj-132460111.html"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group block bg-gold-light rounded-2xl p-6 border border-amber-200 hover:border-maroon transition-colors"
+      >
+        <div className="text-xs font-bold text-maroon uppercase tracking-wide mb-2">
+          Dainik Bhaskar
+        </div>
+        <p className="text-sm text-brand-text leading-relaxed mb-3">
+          The complete story of Kasganj's famous Roshan Lal Sohan Papdi — how a decades-old family recipe became the town's signature sweet.
+        </p>
+        <span className="inline-flex items-center gap-1 text-xs font-bold text-maroon group-hover:underline">
+          Read Full Story →
+        </span>
+      </a>
+    </div>
+
+    {/* Video Feature */}
+    <div className="bg-brand-dark rounded-2xl p-8 md:p-10 flex flex-col md:flex-row items-center gap-6 mb-16">
+      <div className="flex-1">
+        <div className="text-xs font-bold text-gold uppercase tracking-wide mb-2">
+          Video Feature
+        </div>
+        <p className="text-white text-lg font-playfair leading-snug mb-4">
+          ETV Bharat's team visited our shop to uncover the secret behind Kasganj's most iconic sweet.
+        </p>
+        
+          <a
+          href="https://www.youtube.com/watch?v=YKfk9NO_Xzw"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 bg-gold text-brand-dark font-bold text-sm px-6 py-3 rounded-full hover:bg-amber-400 transition-colors"
+        >
+          ▶ Watch on ETV Bharat
+        </a>
+      </div>
+      
+        <a
+        href="https://www.youtube.com/watch?v=YKfk9NO_Xzw"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="relative w-full md:w-64 aspect-video rounded-xl overflow-hidden shrink-0 group"
+      >
+        <img
+          src="https://img.youtube.com/vi/YKfk9NO_Xzw/hqdefault.jpg"
+          alt="ETV Bharat video feature thumbnail"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/30 flex items-center justify-center group-hover:bg-black/40 transition-colors">
+          <div className="w-14 h-14 rounded-full bg-white/90 flex items-center justify-center text-2xl text-maroon">
+            ▶
           </div>
         </div>
-      </section>
+      </a>
+    </div>
+
+    {/* Secondary trust strip — logo mentions */}
+    <div className="border-t border-amber-100 pt-10">
+      <p className="text-center text-xs font-bold text-amber-700/60 uppercase tracking-widest mb-6">
+        Also Mentioned On
+      </p>
+      <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-4">
+        {[
+          { name: "Dainik Jagran", color: "text-rose-400" },
+          { name: "Amar Ujala", color: "text-blue-700" },
+          { name: "Times of India", color: "text-gray-500" },
+          { name: "JustDial", color: "text-orange-400" },
+          { name: "MagicPin", color: "text-purple-400" },
+          { name: "TripAdvisor", color: "text-green-500" },
+        ].map((brand) => (
+          <span
+            key={brand.name}
+            className={`font-bold text-lg italic ${brand.color} opacity-80 hover:opacity-100 transition-opacity cursor-default`}
+          >
+            {brand.name}
+          </span>
+        ))}
+      </div>
+    </div>
+</div>
+</section>
     </>
   );
 }
