@@ -6,13 +6,32 @@ import { useState } from 'react';
 // SEO for this page is handled by the root layout's structured data.
 
 export default function ContactPage() {
-  const [form, setForm] = useState({ name: '', email: '', phone: '', subject: 'General Enquiry', message: '' });
+const [form, setForm] = useState({ name: '', email: '', phone: '', subject: 'General Enquiry', message: '' });
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e: React.MouseEvent) => {
+  const handleSubmit = async (e: React.MouseEvent) => {
     e.preventDefault();
-    if (form.name && form.email && form.message) {
+    if (!(form.name && form.email && form.message)) return;
+
+    setSending(true);
+    setError('');
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+
+      if (!res.ok) throw new Error('Failed to send');
+
       setSubmitted(true);
+    } catch (err) {
+      setError('Something went wrong. Please try again or contact us directly at +91-7055513961.');
+    } finally {
+      setSending(false);
     }
   };
 
@@ -44,7 +63,7 @@ export default function ContactPage() {
               {
                 icon: '📧',
                 title: 'Email',
-                lines: ['info@roshanlaljisweets.com'],
+                lines: ['rlkcfoods@gmail.com'],
                 sub: 'We reply within 24 hours',
               },
               {
@@ -172,11 +191,15 @@ export default function ContactPage() {
                     />
                   </div>
 
+                  {error && (
+                    <p className="text-center text-xs text-red-600 font-medium">{error}</p>
+                  )}
                   <button
                     onClick={handleSubmit}
-                    className="w-full bg-maroon text-white py-3 rounded-xl font-bold text-sm hover:bg-maroon-dark transition-colors"
+                    disabled={sending}
+                    className="w-full bg-maroon text-white py-3 rounded-xl font-bold text-sm hover:bg-maroon-dark transition-colors disabled:opacity-60"
                   >
-                    Send Message →
+                    {sending ? 'Sending...' : 'Send Message →'}
                   </button>
                   <p className="text-center text-[10px] text-amber-700/50">
                     Or reach us directly at +91-7055513961
