@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import PageHero from '@/components/PageHero';
+import GiftingGrid from '@/components/GiftingGrid';
 
 export const metadata: Metadata = {
   title: 'Gifting — Customisable Gift Boxes & Hampers',
@@ -82,8 +82,7 @@ const boxNames: { name: string; tag: string }[] = [
 // Real filenames from /public/images/gifting (in this order)
 const boxImageFiles = [
   'IMG_8872.JPG', 'IMG_8873.JPG', 'IMG_8874.JPG', 'IMG_8879.JPG', 'IMG_8884.JPG',
-  'IMG_8885.JPG', 'IMG_8897.JPG', 'IMG_8901.JPG', 'IMG_8903.JPG', 'IMG_8907.JPG',
-  'IMG_8909.JPG', 'IMG_8913.JPG', 'IMG_8915.JPG', 'IMG_8919.JPG', 'IMG_8932.JPG',
+  'IMG_8885.JPG', 'IMG_8897.JPG', 'IMG_8901.JPG', 'IMG_8903.JPG', 'IMG_8907.JPG', 'IMG_8913.JPG', 'IMG_8915.JPG', 'IMG_8919.JPG', 'IMG_8932.JPG',
   'IMG_8935.JPG', 'IMG_8938.JPG', 'IMG_8940.JPG', 'IMG_8941.JPG', 'IMG_8946.JPG',
   'IMG_8948.JPG', 'IMG_8951.JPG', 'IMG_8954.JPG', 'IMG_8961.JPG', 'IMG_8963.JPG',
   'IMG_8965.JPG', 'IMG_8966.JPG', 'IMG_8968.JPG', 'IMG_8972.JPG', 'IMG_8976.JPG',
@@ -103,7 +102,8 @@ export default function GiftingPage() {
   return (
     <>
       <PageHero
-        emoji="🎁"
+        image="/namkeen.png"
+        imageAlt="Namkeen Gift Box"
         tag="Made To Your Taste"
         title="Gifts That"
         highlight="Delight"
@@ -118,34 +118,7 @@ export default function GiftingPage() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-          {giftBoxes.map((box) => (
-            <a
-              key={box.name}
-              href={waLink(box.name)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group bg-white rounded-2xl overflow-hidden border border-amber-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-200 cursor-pointer block"
-            >
-              <div className={`w-full aspect-square relative ${box.bg ?? 'bg-gold-light'}`}>
-                <Image
-                  src={box.image}
-                  alt={box.name}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                />
-              </div>
-              <div className="p-4">
-                <div className="text-[10px] font-bold text-gold uppercase tracking-wider mb-1">{box.tag}</div>
-                <div className="font-playfair text-base font-semibold text-brand-dark mb-1.5 leading-snug">{box.name}</div>
-                <div className="flex items-center gap-1.5 text-sm font-bold text-maroon">
-                  💬 Enquire to Customize
-                </div>
-              </div>
-            </a>
-          ))}
-        </div>
+        <GiftingGrid boxes={giftBoxes} />
       </section>
 
       {/* Bottom CTA banner — matches Sweets page gifting banner style */}

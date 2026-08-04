@@ -36,15 +36,16 @@ export default function Navbar() {
           {/* Logo */}
       
 
-<Image
-  src="/logo.png"
-  alt="Roshan Lal Ji Sweets"
-  width={120}
-  height={48}
-  className="object-contain"
-  priority
-/>
-
+<Link href="/">
+  <Image
+    src="/logo.png"
+    alt="Roshan Lal Ji Sweets"
+    width={120}
+    height={48}
+    className="object-contain"
+    priority
+  />
+</Link>
 
 
       {/* Right icons */}

@@ -15,8 +15,9 @@ export const metadata: Metadata = {
   },
 };
 
+
 const categories = [
-  { image: '/images/hero/Healthy.png', label: 'Guilt-Free', bg: 'bg-green-50', href: '/sweets' },
+  { image: '/images/hero/Healthy.png', label: 'Guilt-Free', bg: 'bg-green-50', href: '/guilt-free' },
   { image: '/images/hero/Festive.png', label: 'Festive Special', bg: 'bg-amber-50', href: '/sweets' },
   { image: '/images/hero/Sweets.png', label: 'Mithai', bg: 'bg-pink-50', href: '/sweets' },
   { image: '/images/hero/Namkeens.png', label: 'Namkeen', bg: 'bg-yellow-50', href: '/namkeen' },
