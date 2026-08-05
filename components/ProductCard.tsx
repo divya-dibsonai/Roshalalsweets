@@ -6,7 +6,6 @@ interface ProductCardProps {
   tag: string;
   name: string;
   desc: string;
-  price: string;
   bg?: string;
 }
 

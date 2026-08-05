@@ -184,7 +184,6 @@ export default function Home() {
     tag="Aromatic" 
     name="Hing Namkeen" 
     desc="Asafoetida-spiced namkeen with a distinctive tangy kick" 
-    price="₹200/kg" 
     bg="bg-yellow-50"
   />
   <ProductCard 
@@ -192,7 +191,6 @@ export default function Home() {
     tag="Crunchy" 
     name="Beetroot Chips" 
     desc="Thinly sliced, lightly salted beetroot chips" 
-    price="₹250/kg" 
     bg="bg-red-50"
   />
   <ProductCard 
@@ -200,7 +198,6 @@ export default function Home() {
     tag="Protein-rich" 
     name="Moong Bhujiya" 
     desc="Crispy moong dal sev, spiced and roasted to perfection" 
-    price="₹210/kg" 
     bg="bg-green-50"
   />
   <ProductCard 
@@ -208,7 +205,6 @@ export default function Home() {
     tag="Healthy" 
     name="Ragi Chips" 
     desc="Finger millet chips — a wholesome, gluten-free snack" 
-    price="₹230/kg" 
     bg="bg-amber-50"
   />
 </div>
