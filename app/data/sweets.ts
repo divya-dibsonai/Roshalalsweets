@@ -44,7 +44,7 @@ export const sweets = [
   { image: '/images/sweets/Shahi Chini Gazak.png', tag: 'Gazak', name: 'Shahi Chini Gazak.png', desc: 'Sesame and cashew brittle, crunchy and rich', price: 'TBD', bg: 'bg-green-50', category: 'Seasonal Sweets' },
   { image: '/images/sweets/Til Patti.jpg', tag: 'Gazak', name: 'Til Patti', desc: 'Thin sesame seed brittle sweetened with jaggery', price: 'TBD', bg: 'bg-green-50', category: 'Seasonal Sweets' },
   { image: '/images/sweets/Choco Vanilla.png', tag: 'Khoya Sweets', name: 'Choco Vanilla', desc: 'Classic chocolate-vanilla swirl barfi, a modern favourite', price: 'TBD', bg: 'bg-purple-50', category: 'Khoya Sweets' },
-  { image: '/images/sweets/Coconut Laddoo.png', tag: 'Khoya Sweets', name: 'Coconut Laddoo', desc: 'Sweet coconut laddoo rolled in desiccated coconut', price: 'TBD', bg: 'bg-yellow-50', category: 'Khoya Sweets' },
+  { image: '/images/sweets/CoconutLadoo.png', tag: 'Khoya Sweets', name: 'Coconut Laddoo', desc: 'Sweet coconut laddoo rolled in desiccated coconut', price: 'TBD', bg: 'bg-yellow-50', category: 'Khoya Sweets' },
   { image: '/images/sweets/Khoya Barfi.png', tag: 'Khoya Sweets', name: 'Khoya Burfi', desc: 'Dense, creamy khoya barfi with cardamom', price: 'TBD', bg: 'bg-amber-50', category: 'Khoya Sweets' },
  // { emoji: '🥛', tag: 'Khoya Sweets', name: 'Khoya Cutlate', desc: 'Khoya sweet shaped and fried like a cutlet', price: 'TBD', bg: 'bg-yellow-50', category: 'Khoya Sweets' }, // TODO: image not available yet
  // { emoji: '🥛', tag: 'Khoya Sweets', name: 'Khoya Gulkand Laddoo', desc: 'Khoya laddoo flavoured with sweet rose petal preserve', price: 'TBD', bg: 'bg-yellow-50', category: 'Khoya Sweets' }, // TODO: image not available yet
