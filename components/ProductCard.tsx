@@ -9,7 +9,7 @@ interface ProductCardProps {
   bg?: string;
 }
 
-export default function ProductCard({ image, emoji, tag, name, desc, price, bg = 'bg-gold-light' }: ProductCardProps) {
+export default function ProductCard({ image, emoji, tag, name, desc, bg = 'bg-gold-light' }: ProductCardProps) {
   return (
     <div className="bg-white rounded-2xl overflow-hidden border border-amber-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-200 cursor-pointer">
       <div className={`w-full aspect-square flex items-center justify-center ${bg} relative`}>
@@ -29,7 +29,7 @@ export default function ProductCard({ image, emoji, tag, name, desc, price, bg =
         <div className="text-[10px] font-bold text-gold uppercase tracking-wider mb-1">{tag}</div>
         <div className="font-playfair text-base font-semibold text-brand-dark mb-1.5 leading-snug">{name}</div>
         <div className="text-[11px] text-amber-700/70 mb-3 leading-relaxed">{desc}</div>
-        <div className="font-bold text-sm text-maroon">{price}</div>
+        
       </div>
     </div>
   );

@@ -3,7 +3,7 @@ import { useState } from 'react';
 import ProductCard from '@/components/ProductCard';
 
 type Sweet = {
-  image?: string; emoji?: string; tag: string; name: string; desc: string; price: string; bg: string; category: string;
+  image?: string; emoji?: string; tag: string; name: string; desc: string; bg: string; category: string;
 };
 
 const FILTERS = ['All', 'Bengali Sweets', 'Desi Ghee Sweets', 'Khoya Sweets', 'Mewa Sweets', 'Seasonal Sweets', 'Snacks'];
