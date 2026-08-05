@@ -27,10 +27,10 @@ const categories = [
 ];
 
 const featuredSweets = [
-  { emoji: '🧡', tag: 'Bestseller', name: 'Son Papdi', desc: 'Melt-in-mouth flaky delight made with pure ghee & sugar', price: '₹280/kg', bg: 'bg-orange-50' },
-  { emoji: '🤍', tag: 'Premium', name: 'Kaju Katli', desc: 'Classic cashew fudge with real silver varq', price: '₹720/kg', bg: 'bg-gray-50' },
-  { emoji: '🍯', tag: 'Festive', name: 'Mawa Barfi', desc: 'Rich khoya barfi with cardamom, a family favourite', price: '₹480/kg', bg: 'bg-amber-50' },
-  { emoji: '🌹', tag: 'Seasonal', name: 'Gujiya', desc: 'Holi special khoya-filled pastries, fried to perfection', price: '₹380/kg', bg: 'bg-pink-50' },
+  { image: '/HP/BalushaiHP.png', tag: 'Classic', name: 'Balushahi', desc: 'Deep-fried, flaky sweet soaked in sugar syrup — a timeless favourite', price: '₹320/kg', bg: 'bg-yellow-50' },
+  { image: '/HP/GhewarHP.png', tag: 'Seasonal Special', name: 'Ghewar', desc: 'Disc-shaped, honeycomb-textured sweet made with pure ghee', price: '₹450/kg', bg: 'bg-red-50' },
+  { image: '/HP/KajukatliHP.png', tag: 'Premium', name: 'Kaju Katli', desc: 'Classic cashew fudge with real silver varq', price: '₹720/kg', bg: 'bg-gray-50' },
+  { image: '/HP/sonpapdiHP.png', tag: 'Bestseller', name: 'Sonpapdi', desc: 'Melt-in-mouth flaky delight made with pure ghee & sugar', price: '₹280/kg', bg: 'bg-orange-50' },
 ];
 
 const whyLoveUs = [
@@ -149,10 +149,24 @@ export default function Home() {
           </Link>
         </div>
         <div className="bg-gradient-to-br from-maroon-light to-gold flex flex-col items-center justify-center py-14 gap-3">
-          <span className="text-[90px]">🪔</span>
-          <p className="font-playfair text-cream/80 text-sm tracking-widest uppercase">Est. Before 1947</p>
-        </div>
-      </div>
+  <div className="relative w-72 h-72 flex items-center justify-center">
+    {/* Golden glow behind */}
+    <div className="absolute inset-0 bg-gold/60 blur-3xl rounded-full scale-90" />
+    
+    {/* Image with soft, faded edges */}
+    <img
+      src="/HP/journey.png"
+      alt="Heritage journey"
+      className="relative w-64 h-64 object-contain"
+      style={{
+        maskImage: "radial-gradient(circle, black 55%, transparent 80%)",
+        WebkitMaskImage: "radial-gradient(circle, black 55%, transparent 80%)",
+      }}
+    />
+  </div>
+  <p className="font-playfair text-cream/80 text-sm tracking-widest uppercase">Est. Before 1947</p>
+</div>
+</div>
 
       {/* Namkeen Teaser */}
       <section className="px-6 md:px-10 pb-14">
@@ -165,11 +179,39 @@ export default function Home() {
             <Link href="/namkeen" className="text-maroon text-sm font-semibold border-b-2 border-maroon pb-0.5 hover:opacity-75">View All →</Link>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
-            <ProductCard emoji="🥜" tag="Crispy" name="Aloo Bhujia" desc="Thin, spiced potato sev — a classic North Indian favourite" price="₹180/kg" bg="bg-yellow-50"/>
-            <ProductCard emoji="🌶️" tag="Spicy" name="Mix Namkeen" desc="Medley of sev, peanuts & dal with perfect spice blend" price="₹220/kg" bg="bg-red-50"/>
-            <ProductCard emoji="🫘" tag="Healthy" name="Roasted Chana" desc="Lightly spiced roasted chickpeas, high protein & delicious" price="₹160/kg" bg="bg-green-50"/>
-            <ProductCard emoji="🥨" tag="Crunchy" name="Mathri" desc="Flaky, seasoned wheat crackers made with pure ghee" price="₹240/kg" bg="bg-amber-50"/>
-          </div>
+  <ProductCard 
+    image="/HP/hing-namkeen.png" 
+    tag="Aromatic" 
+    name="Hing Namkeen" 
+    desc="Asafoetida-spiced namkeen with a distinctive tangy kick" 
+    price="₹200/kg" 
+    bg="bg-yellow-50"
+  />
+  <ProductCard 
+    image="/HP/beetroot-chips.png" 
+    tag="Crunchy" 
+    name="Beetroot Chips" 
+    desc="Thinly sliced, lightly salted beetroot chips" 
+    price="₹250/kg" 
+    bg="bg-red-50"
+  />
+  <ProductCard 
+    image="/HP/moong-bhujiya.png" 
+    tag="Protein-rich" 
+    name="Moong Bhujiya" 
+    desc="Crispy moong dal sev, spiced and roasted to perfection" 
+    price="₹210/kg" 
+    bg="bg-green-50"
+  />
+  <ProductCard 
+    image="/HP/ragi-chips.png" 
+    tag="Healthy" 
+    name="Ragi Chips" 
+    desc="Finger millet chips — a wholesome, gluten-free snack" 
+    price="₹230/kg" 
+    bg="bg-amber-50"
+  />
+</div>
         </div>
       </section>
 
