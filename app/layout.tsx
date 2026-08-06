@@ -2,11 +2,11 @@ import type { Metadata } from 'next';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-
-const siteUrl = 'https://roshanlalsweets.vercel.app';
+ 
+const siteUrl = 'https://www.roshanlaljisweets.com';
 const siteName = 'Roshan Lal Ji Sweets & Restaurant';
 const siteDescription = 'Authentic North Indian sweets, namkeen & restaurant in Kasganj, UP — made with pure desi ghee and generations of love. Est. before Indian Independence. Son Papdi, Kaju Katli, Mawa Barfi & more.';
-
+ 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     description: siteDescription,
     images: [
       {
-        url: `${siteUrl}/og-image.png`,
+        url: `${siteUrl}/logo.jpg`,
         width: 1200,
         height: 630,
         alt: 'Roshan Lal Ji Sweets & Restaurant — Authentic Indian Sweets Since Independence',
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: siteName,
     description: siteDescription,
-    images: [`${siteUrl}/og-image.png`],
+    images: [`${siteUrl}/logo.jpg`],
   },
   alternates: {
     canonical: siteUrl,
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     // google: 'your-verification-token',
   },
 };
-
+ 
 // Structured data for local business (shown in Google search results)
 const structuredData = {
   '@context': 'https://schema.org',
@@ -83,7 +83,7 @@ const structuredData = {
   },
   openingHoursSpecification: {
     '@type': 'OpeningHoursSpecification',
-    dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'],
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
     opens: '07:30',
     closes: '22:30',
   },
@@ -99,7 +99,7 @@ const structuredData = {
     'https://www.facebook.com/roshanlalsweets/',
   ],
 };
-
+ 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
@@ -117,3 +117,4 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   );
 }
+ 
