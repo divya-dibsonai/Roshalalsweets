@@ -11,6 +11,7 @@
   "dependencies": {
     "@mux/mux-node": "^14.1.1",
     "@mux/mux-player-react": "^3.13.2",
+    "@vercel/analytics": "^2.0.1",
     "lucide-react": "^1.25.0",
     "next": "14.2.3",
     "next-video": "^2.8.1",
