@@ -120,7 +120,18 @@ export default function Footer() {
 
         <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-2 text-[11px] text-white/40">
           <span>© 2025 Roshan Lal Ji Sweets & Restaurant. All Rights Reserved.</span>
-          <span>Made with love in North India</span>
+ <span className="inline-flex items-center gap-2 text-sm tracking-wide text-white/40">
+  Made and maintained by{" "}
+  <a
+    href="https://turtlejade.com/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="group relative font-medium text-white/70 transition-colors duration-300 hover:text-emerald-400"
+  >
+    Turtle Jade Studios
+    <span className="absolute -bottom-0.5 left-0 h-px w-0 bg-emerald-400 transition-all duration-300 group-hover:w-full" />
+  </a>
+</span>
         </div>
       </div>
 
